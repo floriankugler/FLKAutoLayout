@@ -7,7 +7,7 @@ FLKAutoLayout creates simple constraints with a readable syntax and provides man
 
 FLKAutoLayout provides methods on UIView *instances* for simple layout constraints like width and height or constraining an edge of one view to another. Furthermore it provides methods on the UIView *class* for more complex layout constraints where more than two views are involved.
 
-For some examples of how to setup constraints please check the [example project](/dkduck/FLKAutoLayout/blob/master/Example).
+For some examples of how to setup constraints please check the [example project](/dkduck/FLKAutoLayout/tree/master/Example).
 
 ## Example
 
@@ -36,6 +36,8 @@ Let's assume we have a bunch of labels and an equal amount of textFields and we 
 
 
 ## FLKAutoLayout instance methods
+
+FLKAutoLayout extends UIView instances with methods to setup simple constraints in a readable form.
 
 Aligning edges of one view to another:
 
@@ -91,6 +93,8 @@ you can use a generic helper method:
 
 ## FLKAutoLayout class methods
 
+For laying out more than two views at once FLKAutoLayout provides extends UIView with some class methods.
+
 Align multiple views at once:
 
 ``` objective-c
@@ -101,7 +105,7 @@ Align multiple views at once:
 // see UIView+FLKAutoLayout.h for more...
 ```
 
-Constraing width and height of multiple views:
+Constrain width and height of multiple views:
 
 ``` objective-c
 // constrain all views to the same height
