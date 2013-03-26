@@ -12,7 +12,6 @@
 @interface ALEAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 @property (strong, nonatomic) ALEViewController *viewController;
 
 @end
