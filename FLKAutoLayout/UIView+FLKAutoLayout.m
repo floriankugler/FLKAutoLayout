@@ -204,6 +204,12 @@ typedef NSArray* (^viewChainingBlock)(UIView* view1, UIView* view2);
 
 #pragma mark Space out multiple views
 
++ (NSArray*)spaceOutViewsHorizontally:(NSArray*)views predicate:(NSString*)predicate{
+    return [self chainViews:views usingBlock:^NSArray*(UIView* view1, UIView* view2) {
+        return [view2 constrainLeadingSpaceToView:view1 predicate:predicate];
+    }];
+}
+
 + (NSArray*)spaceOutViewsVertically:(NSArray*)views predicate:(NSString*)predicate {
     return [self chainViews:views usingBlock:^NSArray*(UIView* view1, UIView* view2) {
         return [view2 constrainTopSpaceToView:view1 predicate:predicate];

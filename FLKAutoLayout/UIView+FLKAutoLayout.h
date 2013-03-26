@@ -9,7 +9,6 @@
 
 @interface UIView (FLKAutoLayout)
 
-- (NSArray*)alignAttribute:(NSLayoutAttribute)attribute toView:(UIView*)view predicate:(NSString*)predicate;
 - (NSArray*)alignAttribute:(NSLayoutAttribute)attribute toAttribute:(NSLayoutAttribute)toAttribute ofView:(UIView*)view predicate:(NSString*)predicate;
 
 
@@ -59,6 +58,7 @@
 + (NSArray*)alignTopAndBottomEdgesOfViews:(NSArray*)views;
 
 
++ (NSArray*)spaceOutViewsHorizontally:(NSArray*)views predicate:(NSString*)predicate;
 + (NSArray*)spaceOutViewsVertically:(NSArray*)views predicate:(NSString*)predicate;
 
 + (NSArray*)distributeCenterXOfViews:(NSArray*)views inView:(UIView*)view;

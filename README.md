@@ -9,6 +9,32 @@ FLKAutoLayout provides methods on UIView *instances* for simple layout constrain
 
 For some examples of how to setup constraints please check the [example project](/dkduck/FLKAutoLayout/blob/master/Example).
 
+## Example
+
+Let's assume we have a bunch of labels and an equal amount of textFields and we want to align them nicely in a grid like manner:
+
+``` objective-c
+// align the first label with its superview
+[labels[0] alignTop:@"20" leading:@"20" toView:labels[0].superview];
+// give it a minimum width of 200 and a maximum width of 300
+[labels[0] constrainWidth:@">=200,<=300"];
+// now constrain all labels to this size
+[UIView alignLeadingAndTrailingEdgesOfViews:labels];
+// space the labels out vertically with 10 points in between
+[UIView spaceOutViewsVertically:labels predicate:@"10"];
+
+// now let's take care of the text fields. 
+// the first one has a fixed space of 20 to its label
+[textFields[0] constrainLeadingSpaceToView:labels[0] predicate:@"20"];
+// constrain the right edge to its superview with 20 points padding
+[textFields[0] alignTrailingEdgeWithView:textFields[0].superview predicate:@"20"];
+// constrain all other text fields to the same width
+[UIView alignLeadingAndTrailingEdgesOfViews:textFields];
+// and finally let's align the baseline of each label with the baseline of each text field
+[UIView alignAttribute:NSLayoutAttributeBaseline ofViews:labels toViews:textFields predicate:nil];
+```
+
+
 ## FLKAutoLayout instance methods
 
 Aligning edges of one view to another:
@@ -22,6 +48,17 @@ Aligning edges of one view to another:
 
  // same as before but give this constraint a priority of 750
 [view alignLeadingEdgeWithView:otherView predicate:@"20@750"];
+
+// aligning some other edge types
+[view alignTopEdgeWithView:otherView predicate:nil];
+[view alignBottomEdgeWithView:otherView predicate:nil];
+[view alignTrailingEdgeWithView:otherView predicate:nil];
+[view alignBaselineWithView:otherView predicate:nil];
+[view alignCenterXWithView:otherView predicate:nil];
+[view alignCenterYWithView:otherView predicate:nil];
+
+// centering two views
+[view alignCenterWithView:otherView];
 ```
 
 Constraining width & height:
@@ -45,10 +82,55 @@ Spacing out two views:
 [view constrainLeadingSpaceToView:otherView predicate:@">=20"];
 ```
 
+If you need more control over which layout attribute of one view should be constrained to which layout attribute of another view,
+you can use a generic helper method:
+
+``` objective-c
+[view alignAttribute:NSLayoutAttributeCenterX to Attribute:NSLayoutAttributeTrailing ofView:otherView predicate:@"20"];
+```
+
+## FLKAutoLayout class methods
+
+Align multiple views at once:
+
+``` objective-c
+// align all views in the views array along their leading edge
+[UIView alignLeadingEdgesOfViews:views];
+// align all views in the views array along their bottom edge
+[UIView alignBottomEdgesOfViews:views];
+// see UIView+FLKAutoLayout.h for more...
+```
+
+Constraing width and height of multiple views:
+
+``` objective-c
+// constrain all views to the same height
+[UIView constrainHeightForViews:views];
+// constrain all views to the same width
+[UIView constrainWidthForViews:views];
+```
+
+Spacing out multiple views:
+
+``` objective-c
+// space out views horizontally with 20 points in between
+[UIView spaceOutViewsHorizontally:views predicate:@"20"];
+// space out views vertically with no space in between
+[UIView spaceOutViewsHorizontally:views predicate:nil];
+
+// Distribute views according to their horizontal center
+[UIView distributeCenterXOfViews:views inView:containerView];
+// Distribute views according to their vertical center
+[UIView distributeCenterYOfViews:views inView:containerView];
+```
+
+Please note that distributing views at their centers will line up the center of the first view at the edge of the container view.
+
+
 ### The predicate argument
 
-Many of the methods take a predicate argument which resembles the syntax Apple uses in their visual format language,
-extended by the possibiliy to also specify a multiplier.
+Many of the methods take a predicate string which resembles the syntax Apple uses in their visual format language,
+extended by the possibiliy to also specify a multiplier. A nil predicate is the same as @"0".
 
 [ == | >= | <= ] [ *multipler ] [ constant ] [ @priority ], ...
 
@@ -67,8 +149,6 @@ For example:
 // greater than or equal to 1/2 of the otherView width, smaller than or equal to 600 points with a priority of 100
 [view constrainWidthToView:otherView predicate:@">=*.5,<=600@100"];
 ```
-
-## FLKAutoLayout class methods
 
 
 ## Creator
