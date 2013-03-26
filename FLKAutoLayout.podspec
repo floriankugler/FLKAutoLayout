@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/dkduck/FLKAutoLayout"
   s.license      = 'MIT'
   s.authors      = { "Florian Kugler" => "mail@floriankugler.de" }
-  s.source       = { :git => "https://github.com/dkduck/FLKAutoLayout.git", :tag => "v0.1.1" }
+  s.source       = { :git => "https://github.com/dkduck/FLKAutoLayout.git", :tag => "v0.1.0" }
   s.source_files = 'FLKAutoLayout/*'
   s.requires_arc = true
 end
