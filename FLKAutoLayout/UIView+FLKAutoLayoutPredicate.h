@@ -15,7 +15,7 @@ typedef struct {
     UILayoutPriority priority;
 } FLKAutoLayoutPredicate;
 
-static FLKAutoLayoutPredicate flkAutoLayoutPredicateMake(NSLayoutRelation relation, CGFloat multiplier, CGFloat constant, UILayoutPriority priority) {
+static FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGFloat multiplier, CGFloat constant, UILayoutPriority priority) {
     FLKAutoLayoutPredicate predicate;
     predicate.relation = relation;
     predicate.multiplier = multiplier;

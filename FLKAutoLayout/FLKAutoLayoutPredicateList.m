@@ -83,7 +83,7 @@
 
 
 - (FLKAutoLayoutPredicate)defaultPredicate {
-    return flkAutoLayoutPredicateMake(NSLayoutRelationEqual, 1, 0, 0);
+    return FLKAutoLayoutPredicateMake(NSLayoutRelationEqual, 1, 0, 0);
 }
 
 - (NSRegularExpression*)predicateExpression {

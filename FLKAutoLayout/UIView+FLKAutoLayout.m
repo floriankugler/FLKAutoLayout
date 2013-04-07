@@ -230,7 +230,7 @@ typedef NSArray* (^viewChainingBlock)(UIView* view1, UIView* view2);
     CGFloat multiplier = 0;
     NSMutableArray* constraints = [NSMutableArray array];
     for (UIView* view in views) {
-        FLKAutoLayoutPredicate predicate = flkAutoLayoutPredicateMake(NSLayoutRelationEqual, multiplier, 0, 0);
+        FLKAutoLayoutPredicate predicate = FLKAutoLayoutPredicateMake(NSLayoutRelationEqual, multiplier, 0, 0);
         NSLayoutConstraint* constraint = [view applyPredicate:predicate toView:inView attribute:attribute];
         [constraints addObject:constraint];
         multiplier += interval;
