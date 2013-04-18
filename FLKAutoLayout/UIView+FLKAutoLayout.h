@@ -12,7 +12,7 @@
 - (NSArray*)alignAttribute:(NSLayoutAttribute)attribute toAttribute:(NSLayoutAttribute)toAttribute ofView:(UIView*)view predicate:(NSString*)predicate;
 
 
-- (NSArray*)alignToView:(UIView*)null;
+- (NSArray*)alignToView:(UIView*)view;
 - (NSArray*)alignTop:(NSString*)top leading:(NSString*)leading bottom:(NSString*)bottom trailing:(NSString*)trailing toView:(UIView*)view;
 - (NSArray*)alignTop:(NSString*)top leading:(NSString*)leading toView:(UIView*)view;
 - (NSArray*)alignBottom:(NSString*)bottom trailing:(NSString*)trailing toView:(UIView*)view;

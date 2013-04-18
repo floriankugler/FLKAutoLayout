@@ -34,20 +34,20 @@ typedef NSArray* (^viewChainingBlock)(UIView* view1, UIView* view2);
 }
 
 - (NSArray*)alignTop:(NSString*)top leading:(NSString*)leading bottom:(NSString*)bottom trailing:(NSString*)trailing toView:(UIView*)view {
-    NSArray* topLeadingConstraints = [self alignTop:top leading:leading toView:view];
-    NSArray* bottomTrailingConstraints = [self alignBottom:bottom trailing:trailing toView:view];
+    NSArray* topLeadingConstraints = (top || leading) ? [self alignTop:top leading:leading toView:view] : @[];
+    NSArray* bottomTrailingConstraints = (bottom || trailing) ? [self alignBottom:bottom trailing:trailing toView:view] : @[];
     return [topLeadingConstraints arrayByAddingObjectsFromArray:bottomTrailingConstraints];
 }
 
 - (NSArray*)alignTop:(NSString*)top leading:(NSString*)leading toView:(UIView*)view {
-    NSArray* topConstraints = [self alignTopEdgeWithView:view predicate:top];
-    NSArray* leadingConstraints = [self alignLeadingEdgeWithView:view predicate:leading];
+    NSArray* topConstraints = (top) ? [self alignTopEdgeWithView:view predicate:top] : @[];
+    NSArray* leadingConstraints = (leading) ? [self alignLeadingEdgeWithView:view predicate:leading] : @[];
     return [topConstraints arrayByAddingObjectsFromArray:leadingConstraints];
 }
 
 - (NSArray*)alignBottom:(NSString*)bottom trailing:(NSString*)trailing toView:(UIView*)view {
-    NSArray* bottomConstraints = [self alignBottomEdgeWithView:view predicate:bottom];
-    NSArray* trailingConstraints = [self alignTrailingEdgeWithView:view predicate:trailing];
+    NSArray* bottomConstraints = (bottom) ? [self alignBottomEdgeWithView:view predicate:bottom] : @[];
+    NSArray* trailingConstraints = (trailing) ? [self alignTrailingEdgeWithView:view predicate:trailing] : @[];
     return [bottomConstraints arrayByAddingObjectsFromArray:trailingConstraints];
 }
 
