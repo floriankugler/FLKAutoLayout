@@ -16,6 +16,8 @@
 - (NSArray*)alignTop:(NSString*)top leading:(NSString*)leading bottom:(NSString*)bottom trailing:(NSString*)trailing toView:(UIView*)view;
 - (NSArray*)alignTop:(NSString*)top leading:(NSString*)leading toView:(UIView*)view;
 - (NSArray*)alignBottom:(NSString*)bottom trailing:(NSString*)trailing toView:(UIView*)view;
+- (NSArray*)alignTop:(NSString*)top bottom:(NSString*)bottom toView:(UIView*)view;
+- (NSArray*)alignLeading:(NSString*)leading trailing:(NSString*)trailing toView:(UIView*)view;
 
 
 - (NSArray*)alignLeadingEdgeWithView:(UIView*)view predicate:(NSString*)predicate;
