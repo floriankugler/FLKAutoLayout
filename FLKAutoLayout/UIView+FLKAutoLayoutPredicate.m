@@ -24,6 +24,8 @@ FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGF
 }
 
 - (NSLayoutConstraint*)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(UIView*)view fromAttribute:(NSLayoutAttribute)fromAttribute toAttribute:(NSLayoutAttribute)toAttribute {
+    if (predicate.priority > UILayoutPriorityRequired) return nil;
+
     UIView* commonSuperview = [self commonSuperviewWithView:view];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     NSLayoutConstraint* constraint = [NSLayoutConstraint constraintWithItem:self

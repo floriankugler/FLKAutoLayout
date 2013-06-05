@@ -7,6 +7,9 @@
 
 #import <Foundation/Foundation.h>
 
+
+FOUNDATION_EXTERN NSString * const FLKNoConstraint;
+
 @interface UIView (FLKAutoLayout)
 
 - (NSArray*)alignAttribute:(NSLayoutAttribute)attribute toAttribute:(NSLayoutAttribute)toAttribute ofView:(UIView*)view predicate:(NSString*)predicate;
@@ -43,7 +46,6 @@
 - (NSArray *)constrainTrailingSpaceToView:(UIView *)view predicate:(NSString *)predicate;
 - (NSArray*)constrainTopSpaceToView:(UIView*)view predicate:(NSString*)predicate;
 - (NSArray*)constrainBottomSpaceToView:(UIView*)view predicate:(NSString*)predicate;
-
 
 
 + (NSArray*)alignAttribute:(NSLayoutAttribute)attribute ofViews:(NSArray*)ofViews toViews:(NSArray*)toViews predicate:(NSString*)predicate;

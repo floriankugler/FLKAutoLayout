@@ -41,7 +41,9 @@
         FLKAutoLayoutPredicate predicate;
         [predicateValue getValue:&predicate];
         NSLayoutConstraint* constraint = block(predicate);
-        [constraints addObject:constraint];
+        if (constraint) {
+            [constraints addObject:constraint];
+        }
     }
     return constraints;
 }
