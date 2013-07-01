@@ -68,8 +68,7 @@
 				D2589B6B95DE819AACCA7B97 /* ALEViewController.h */,
 				D258991D66A043E0B2B8A4FB /* ALEViewController.m */,
 			);
-			name = Classes;
-			path = ../Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		4B2611791781F9FB00537549 /* Other Sources */ = {
@@ -78,8 +77,7 @@
 				D258922E3E62C9A480633EFD /* main.m */,
 				D25897CEF2803AC350FA95AA /* FLKAutoLayoutExample-Prefix.pch */,
 			);
-			name = "Other Sources";
-			path = "../Other Sources";
+			path = "Other Sources";
 			sourceTree = "<group>";
 		};
 		4B26117A1781F9FB00537549 /* Resources */ = {
@@ -91,8 +89,7 @@
 				D25899A24A7CC449C6008F97 /* Default@2x.png */,
 				D25896E56724351AF80FF6A1 /* Default-568h@2x.png */,
 			);
-			name = Resources;
-			path = ../Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		4B26117B1781FA3D00537549 /* en.lproj */ = {
@@ -101,6 +98,16 @@
 				4B26117C1781FA3D00537549 /* InfoPlist.strings */,
 			);
 			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		4BF9445D1781FB850028CBEB /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				4B2611781781F9FB00537549 /* Classes */,
+				4B2611791781F9FB00537549 /* Other Sources */,
+				4B26117A1781F9FB00537549 /* Resources */,
+			);
+			name = Example;
 			sourceTree = "<group>";
 		};
 		D25897FECFE03E2743C5103E /* Frameworks */ = {
@@ -138,21 +145,11 @@
 		D2589E30C0E4238B1DA7811C = {
 			isa = PBXGroup;
 			children = (
-				D2589CB0FC1A1A5BD2125AE9 /* Products */,
-				D25897FECFE03E2743C5103E /* Frameworks */,
-				D2589F88E658A3A068159D66 /* FLKAutoLayoutExample */,
 				D2589DC549DA66B38317BCD7 /* FLKAutoLayout */,
+				4BF9445D1781FB850028CBEB /* Example */,
+				D25897FECFE03E2743C5103E /* Frameworks */,
+				D2589CB0FC1A1A5BD2125AE9 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		D2589F88E658A3A068159D66 /* FLKAutoLayoutExample */ = {
-			isa = PBXGroup;
-			children = (
-				4B2611781781F9FB00537549 /* Classes */,
-				4B2611791781F9FB00537549 /* Other Sources */,
-				4B26117A1781F9FB00537549 /* Resources */,
-			);
-			path = FLKAutoLayoutExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,8 +177,6 @@
 /* Begin PBXProject section */
 		D25891A2D57B9E45D6175414 /* Project object */ = {
 			isa = PBXProject;
-			attributes = {
-			};
 			buildConfigurationList = D2589B6F95738E1650423339 /* Build configuration list for PBXProject "FLKAutoLayoutExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -247,7 +242,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/FLKAutoLayoutExample-Prefix.pch";
 				INFOPLIST_FILE = "Resources/FLKAutoLayoutExample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "Classes/**";
 				WRAPPER_EXTENSION = app;
@@ -292,7 +287,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/FLKAutoLayoutExample-Prefix.pch";
 				INFOPLIST_FILE = "Resources/FLKAutoLayoutExample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "Classes/**";
 				WRAPPER_EXTENSION = app;
