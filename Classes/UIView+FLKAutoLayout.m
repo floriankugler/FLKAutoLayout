@@ -135,9 +135,52 @@ typedef NSArray* (^viewChainingBlock)(UIView* view1, UIView* view2);
     return [self alignAttribute:NSLayoutAttributeTop toAttribute:NSLayoutAttributeBottom ofView:view predicate:predicate];
 }
 
+#pragma mark Remove constraints
+- (void)removeConstraintsFromApplicableSuperview:(NSArray *)constraints
+{
+    for (NSLayoutConstraint *aConstraint in constraints) {
+        UIView *viewHoldingConstraint = [self viewInTreeHoldingConstraint:aConstraint];
+        [viewHoldingConstraint removeConstraint:aConstraint];
+    }
+}
 
+- (UIView *)viewInTreeHoldingConstraint:(NSLayoutConstraint *)aConstraint
+{
+    if ([self holdsConstraint:aConstraint]) {
+        return self;
+    }else{
+        return [self superviewHoldingConstraint:aConstraint];
+    }
+    
+    return nil;
+}
 
+- (BOOL)holdsConstraint:(NSLayoutConstraint *)constraint
+{
+    return [[self constraints] containsObject:constraint];
+}
 
+- (UIView *)superviewHoldingConstraint:(NSLayoutConstraint *)constraint
+{
+    for (UIView *superview in [self allSuperviews]) {
+        if ([superview holdsConstraint:constraint])
+            return superview;
+    }
+    
+    return nil;
+}
+
+- (NSArray *)allSuperviews
+{
+    NSMutableArray *superviews = [NSMutableArray array];
+    UIView *aSuperview = self.superview;
+    while (aSuperview) {
+        [superviews addObject:aSuperview];
+        aSuperview = aSuperview.superview;
+    }
+    
+    return superviews;
+}
 
 #pragma mark Generic constraint methods for multiple views
 

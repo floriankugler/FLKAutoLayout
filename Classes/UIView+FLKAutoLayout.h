@@ -42,7 +42,7 @@
 - (NSArray*)constrainTopSpaceToView:(UIView*)view predicate:(NSString*)predicate;
 - (NSArray*)constrainLeadingSpaceToView:(UIView*)view predicate:(NSString*)predicate;
 
-
+- (void)removeConstraintsFromApplicableSuperview:(NSArray *)constraints;
 
 + (NSArray*)alignAttribute:(NSLayoutAttribute)attribute ofViews:(NSArray*)ofViews toViews:(NSArray*)toViews predicate:(NSString*)predicate;
 + (NSArray*)alignAttribute:(NSLayoutAttribute)attribute ofViews:(NSArray*)views toAttribute:(NSLayoutAttribute)toAttribute ofViews:(NSArray*)toViews predicate:(NSString*)predicate;
@@ -65,5 +65,7 @@
 
 + (NSArray*)distributeCenterXOfViews:(NSArray*)views inView:(UIView*)view;
 + (NSArray*)distributeCenterYOfViews:(NSArray*)views inView:(UIView*)inView;
+
+
 
 @end
