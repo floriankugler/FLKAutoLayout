@@ -1,0 +1,3 @@
+- use an enum for [UIView allSuperviews]
+- use allSuperviews to impement superview traversal when adding a constraint to a view
+	if really not yet implemented. otherwise, just fix the exception that it throws - and make it more accurate (was thrown when the views DID NOT share a common superview).
