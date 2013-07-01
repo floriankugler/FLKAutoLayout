@@ -68,6 +68,17 @@
     STAssertFalse([[superSuperview constraints] containsObject:constraintConcerningSuperviewAndView], nil);
 }
 
+- (void)testRemoveFromIndirectSuperviewConstraintAppliesToIndirectSuperview
+{
+    NSLayoutConstraint *constraintConcerningSuperSuperViewAndView = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBaseline relatedBy:NSLayoutRelationEqual toItem:superSuperview attribute:NSLayoutAttributeBaseline multiplier:1.0 constant:0.0];
+    
+    [superSuperview addConstraint:constraintConcerningSuperSuperViewAndView];
+    
+    [view removeConstraintsFromApplicableSuperview:@[constraintConcerningSuperSuperViewAndView]];
+    
+    STAssertFalse([[superSuperview constraints] containsObject:constraintConcerningSuperSuperViewAndView], nil);
+}
+
 - (void)testDoesNotRemoveConstraintBetweenSubviews
 {
     [superview addConstraint:constraintConcerningSuperviewAndView];
