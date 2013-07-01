@@ -16,15 +16,18 @@
 
 
 @implementation RemoveConstraintsFromApplicableSuperviewTests {
+    UIWindow *window;
     UIView *superSuperview;
     UIView *superview;
     UIView *view;
     
-    NSLayoutConstraint *theConstraint;
+    NSLayoutConstraint *constraintConcerningSuperviewAndView;
 }
 
 - (void)setUp
 {
+    window = [[UIWindow alloc] init];
+
     superSuperview = [[UIView alloc] init];
     superview = [[UIView alloc] init];
     view = [[UIView alloc] init];
@@ -32,34 +35,46 @@
     [superSuperview addSubview:superview];
     [superview addSubview:view];
     
-    theConstraint = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:superview attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0];
+    constraintConcerningSuperviewAndView = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:superview attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0];
+    
+    [window addSubview:superSuperview];
+    [window makeKeyAndVisible];
 }
 
 - (void)testRemovesFromViewDirectly
 {
-    [superview addConstraint:theConstraint];
+    [superview addConstraint:constraintConcerningSuperviewAndView];
     
-    [superview removeConstraintsFromApplicableSuperview:@[theConstraint]];
+    [superview removeConstraintsFromApplicableSuperview:@[constraintConcerningSuperviewAndView]];
     
-    STAssertFalse([[superview constraints] containsObject:theConstraint], nil);
+    STAssertFalse([[superview constraints] containsObject:constraintConcerningSuperviewAndView], nil);
 }
 
 - (void)testRemovesFromDirectSuperview
 {
-    [superview addConstraint:theConstraint];
+    [superview addConstraint:constraintConcerningSuperviewAndView];
     
-    [view removeConstraintsFromApplicableSuperview:@[theConstraint]];
+    [view removeConstraintsFromApplicableSuperview:@[constraintConcerningSuperviewAndView]];
     
-    STAssertFalse([[superview constraints] containsObject:theConstraint], nil);
+    STAssertFalse([[superview constraints] containsObject:constraintConcerningSuperviewAndView], nil);
 }
 
 - (void)testRemoveFromIndirectSuperview
 {
-    [superSuperview addConstraint:theConstraint];
+    [superSuperview addConstraint:constraintConcerningSuperviewAndView];
     
-    [view removeConstraintsFromApplicableSuperview:@[theConstraint]];
+    [view removeConstraintsFromApplicableSuperview:@[constraintConcerningSuperviewAndView]];
     
-    STAssertFalse([[superSuperview constraints] containsObject:theConstraint], nil);
+    STAssertFalse([[superSuperview constraints] containsObject:constraintConcerningSuperviewAndView], nil);
+}
+
+- (void)testDoesNotRemoveConstraintBetweenSubviews
+{
+    [superview addConstraint:constraintConcerningSuperviewAndView];
+    
+    [superSuperview removeConstraintsFromApplicableSuperview:@[constraintConcerningSuperviewAndView]];
+    
+    STAssertTrue([[superview constraints] containsObject:constraintConcerningSuperviewAndView], nil);
 }
 
 
