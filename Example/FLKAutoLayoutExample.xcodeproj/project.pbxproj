@@ -153,6 +153,8 @@
 /* Begin PBXProject section */
 		D25891A2D57B9E45D6175414 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = D2589B6F95738E1650423339 /* Build configuration list for PBXProject "FLKAutoLayoutExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -215,8 +217,10 @@
 		D2589187FE2EA0E4B2A9124C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FLKAutoLayoutExample/FLKAutoLayoutExample-Prefix.pch";
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "FLKAutoLayoutExample/FLKAutoLayoutExample-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -258,8 +262,10 @@
 		D25898916CBFD2FB95300B95 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FLKAutoLayoutExample/FLKAutoLayoutExample-Prefix.pch";
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "FLKAutoLayoutExample/FLKAutoLayoutExample-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
