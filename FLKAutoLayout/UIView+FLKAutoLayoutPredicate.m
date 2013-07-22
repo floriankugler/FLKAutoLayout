@@ -66,7 +66,7 @@ FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGF
         return self.superview;
     } else {
         UIView* commonSuperview = [self traverseViewTreeForCommonSuperViewWithView:view];
-        NSAssert(commonSuperview, @"Cannot find common superview of %@ and %@. Finding common superview in view tree not implemented yet", self, view);
+        NSAssert(commonSuperview, @"Cannot find common superview of %@ and %@. Did you forget to call addSubview: before adding constraints?", self, view);
         return commonSuperview;
     }
 }
