@@ -15,8 +15,7 @@ typedef struct {
     UILayoutPriority priority;
 } FLKAutoLayoutPredicate;
 
-extern FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGFloat multiplier, CGFloat constant, UILayoutPriority priority);
-
+FOUNDATION_EXTERN FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGFloat multiplier, CGFloat constant, UILayoutPriority priority);
 
 @interface UIView (FLKAutoLayoutPredicate)
 

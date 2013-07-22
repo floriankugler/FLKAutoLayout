@@ -17,7 +17,18 @@ FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGF
 }
 
 
+FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGFloat multiplier, CGFloat constant, UILayoutPriority priority) {
+    FLKAutoLayoutPredicate predicate;
+    predicate.relation = relation;
+    predicate.multiplier = multiplier;
+    predicate.constant = constant;
+    predicate.priority = priority;
+    return predicate;
+}
+
+
 @implementation UIView (FLKAutoLayoutPredicate)
+
 
 - (NSLayoutConstraint*)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(UIView*)toView attribute:(NSLayoutAttribute)attribute {
     return [self applyPredicate:predicate toView:toView fromAttribute:attribute toAttribute:attribute];
@@ -28,17 +39,19 @@ FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGF
 
     UIView* commonSuperview = [self commonSuperviewWithView:view];
     self.translatesAutoresizingMaskIntoConstraints = NO;
-    NSLayoutConstraint* constraint = [NSLayoutConstraint constraintWithItem:self
-                                                                  attribute:fromAttribute
-                                                                  relatedBy:predicate.relation
-                                                                     toItem:view
-                                                                  attribute:toAttribute
-                                                                 multiplier:predicate.multiplier
-                                                                   constant:predicate.constant];
+
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self
+                                              attribute:fromAttribute
+                                              relatedBy:predicate.relation
+                                                 toItem:view
+                                              attribute:toAttribute
+                                             multiplier:predicate.multiplier
+                                               constant:predicate.constant];
     if (predicate.priority) {
         constraint.priority = predicate.priority;
     }
     [commonSuperview addConstraint:constraint];
+
     return constraint;
 }
 

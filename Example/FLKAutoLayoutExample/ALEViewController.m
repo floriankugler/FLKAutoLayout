@@ -7,6 +7,7 @@
 
 #import "ALEViewController.h"
 #import "UIView+FLKAutoLayout.h"
+#import "UIView+FLKAutoLayoutDebug.h"
 
 @interface ALEViewController ()
 
@@ -67,6 +68,8 @@
         bar.backgroundColor = [UIColor greenColor];
         [boxContainer addSubview:bar];
         [boxViews addObject:bar];
+        bar.flk_nameTag = [NSString stringWithFormat:@"Bar view %i", i];
+        [bar constrainWidth:@"80"];
     }
     [boxViews[0] constrainWidth:@"100" height:@"100"];
     [UIView equalWidthForViews:boxViews];
@@ -126,6 +129,15 @@
     [UIView alignBottomEdgesOfViews:buttonViews];
     [UIView distributeCenterXOfViews:buttonViews inView:buttonContainer];
 
+}
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    NSLog(@"%@", [self.view flk_autolayoutTrace]);
+    [self.view flk_exerciseAmbiguityInLayout:YES];
 }
 
 @end

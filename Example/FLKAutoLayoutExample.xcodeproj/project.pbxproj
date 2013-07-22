@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47142856975F4391AC00A77B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A17C0A90F6E4590B60CEA8A /* libPods.a */; settings = {}; };
 		D25890E2289F514B029FB2C1 /* FLKAutoLayoutPredicateList.m in Sources */ = {isa = PBXBuildFile; fileRef = D25893100E21529EC729CD45 /* FLKAutoLayoutPredicateList.m */; };
 		D25890E7028154D08256DD5B /* UIView+FLKAutoLayoutPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2589CE3E06E3C1BDBAA6E4D /* UIView+FLKAutoLayoutPredicate.m */; };
 		D25892F710533354FE585D79 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2589A00DA36706410F2FF43 /* Default.png */; };
@@ -16,6 +17,8 @@
 		D25896224DD77634EBB7EE5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D258996C5AF1F44244340485 /* CoreGraphics.framework */; };
 		D2589629DDDB1FBDF4CB8176 /* UIView+FLKAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D2589A6C2849EBC7A5667EBD /* UIView+FLKAutoLayout.m */; };
 		D25896471D947694F031CD39 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D25896E56724351AF80FF6A1 /* Default-568h@2x.png */; };
+		D2589757DEBFB9167B8481F5 /* UIView+FLKAutoLayoutDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = D2589F4C36CA946E00141BBC /* UIView+FLKAutoLayoutDebug.m */; };
+		D2589814C9785D2454FD0B48 /* NSLayoutConstraint+FLKAutoLayoutDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = D2589A2CD5A4392EBE0603A4 /* NSLayoutConstraint+FLKAutoLayoutDebug.m */; };
 		D258983D2B6E96327BD31312 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D25899A24A7CC449C6008F97 /* Default@2x.png */; };
 		D25899161318C0DC8E98B4AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D258922E3E62C9A480633EFD /* main.m */; };
 		D2589D521005657E7C598BE0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D25892DE614B56873F39EFDA /* InfoPlist.strings */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		006875B0EB834B5ABE8D76C2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		5A17C0A90F6E4590B60CEA8A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPods.a; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25890578AFE13EE9F7CB771 /* UIView+FLKAutoLayoutDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FLKAutoLayoutDebug.h"; sourceTree = "<group>"; };
 		D2589196DC1C27ABC9246B94 /* FLKAutoLayoutExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "FLKAutoLayoutExample-Info.plist"; sourceTree = "<group>"; };
 		D25891F4DE4FC86CE6288AED /* ALEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALEAppDelegate.m; sourceTree = "<group>"; };
 		D258922E3E62C9A480633EFD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -37,13 +43,16 @@
 		D258991D66A043E0B2B8A4FB /* ALEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALEViewController.m; sourceTree = "<group>"; };
 		D258996C5AF1F44244340485 /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D25899A24A7CC449C6008F97 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D25899CA8D1057836AA75DC9 /* NSLayoutConstraint+FLKAutoLayoutDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+FLKAutoLayoutDebug.h"; sourceTree = "<group>"; };
 		D2589A00DA36706410F2FF43 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		D2589A2CD5A4392EBE0603A4 /* NSLayoutConstraint+FLKAutoLayoutDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+FLKAutoLayoutDebug.m"; sourceTree = "<group>"; };
 		D2589A6168A5E70EEFFF7E57 /* FLKAutoLayoutExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLKAutoLayoutExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2589A6C2849EBC7A5667EBD /* UIView+FLKAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FLKAutoLayout.m"; sourceTree = "<group>"; };
 		D2589B5428D64F1246324533 /* UIView+FLKAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FLKAutoLayout.h"; sourceTree = "<group>"; };
 		D2589B6B95DE819AACCA7B97 /* ALEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALEViewController.h; sourceTree = "<group>"; };
 		D2589CE3E06E3C1BDBAA6E4D /* UIView+FLKAutoLayoutPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FLKAutoLayoutPredicate.m"; sourceTree = "<group>"; };
 		D2589D61426346262D79CDFE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D2589F4C36CA946E00141BBC /* UIView+FLKAutoLayoutDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FLKAutoLayoutDebug.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +63,7 @@
 				D25894AD65617DDD20B33895 /* UIKit.framework in Frameworks */,
 				D2589E0417D1A58A281BE3E0 /* Foundation.framework in Frameworks */,
 				D25896224DD77634EBB7EE5D /* CoreGraphics.framework in Frameworks */,
+				47142856975F4391AC00A77B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +90,7 @@
 				D2589315A1FCC3872BCE08A3 /* UIKit.framework */,
 				D258928B2209A19F771F3F76 /* Foundation.framework */,
 				D258996C5AF1F44244340485 /* CoreGraphics.framework */,
+				5A17C0A90F6E4590B60CEA8A /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -101,6 +112,10 @@
 				D25893100E21529EC729CD45 /* FLKAutoLayoutPredicateList.m */,
 				D258975FF7C331013F1B8610 /* UIView+FLKAutoLayoutPredicate.h */,
 				D2589CE3E06E3C1BDBAA6E4D /* UIView+FLKAutoLayoutPredicate.m */,
+				D2589F4C36CA946E00141BBC /* UIView+FLKAutoLayoutDebug.m */,
+				D25890578AFE13EE9F7CB771 /* UIView+FLKAutoLayoutDebug.h */,
+				D2589A2CD5A4392EBE0603A4 /* NSLayoutConstraint+FLKAutoLayoutDebug.m */,
+				D25899CA8D1057836AA75DC9 /* NSLayoutConstraint+FLKAutoLayoutDebug.h */,
 			);
 			name = FLKAutoLayout;
 			path = ../FLKAutoLayout;
@@ -113,6 +128,7 @@
 				D25897FECFE03E2743C5103E /* Frameworks */,
 				D2589F88E658A3A068159D66 /* FLKAutoLayoutExample */,
 				D2589DC549DA66B38317BCD7 /* FLKAutoLayout */,
+				006875B0EB834B5ABE8D76C2 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,9 +151,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2589311092CA0CF35AE3DD9 /* Build configuration list for PBXNativeTarget "FLKAutoLayoutExample" */;
 			buildPhases = (
+				CC5172A4894F4DCA907AA342 /* Check Pods Manifest.lock */,
 				D258919A7A1A616F1AE0863B /* Sources */,
 				D258960A1AE9FDB3ECCE7F93 /* Frameworks */,
 				D258907F1D120F86AA014E91 /* Resources */,
+				12B7ABACA36143FBB8A0C776 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,6 +181,8 @@
 			mainGroup = D2589E30C0E4238B1DA7811C;
 			productRefGroup = D2589CB0FC1A1A5BD2125AE9 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+			);
 			projectRoot = "";
 			targets = (
 				D258909ADA432B416E66516E /* FLKAutoLayoutExample */,
@@ -184,6 +204,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		12B7ABACA36143FBB8A0C776 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 1;
+		};
+		CC5172A4894F4DCA907AA342 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 1;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D258919A7A1A616F1AE0863B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -195,6 +248,8 @@
 				D2589629DDDB1FBDF4CB8176 /* UIView+FLKAutoLayout.m in Sources */,
 				D25890E2289F514B029FB2C1 /* FLKAutoLayoutPredicateList.m in Sources */,
 				D25890E7028154D08256DD5B /* UIView+FLKAutoLayoutPredicate.m in Sources */,
+				D2589757DEBFB9167B8481F5 /* UIView+FLKAutoLayoutDebug.m in Sources */,
+				D2589814C9785D2454FD0B48 /* NSLayoutConstraint+FLKAutoLayoutDebug.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +269,7 @@
 /* Begin XCBuildConfiguration section */
 		D2589187FE2EA0E4B2A9124C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 006875B0EB834B5ABE8D76C2 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FLKAutoLayoutExample/FLKAutoLayoutExample-Prefix.pch";
@@ -257,6 +313,7 @@
 		};
 		D25898916CBFD2FB95300B95 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 006875B0EB834B5ABE8D76C2 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FLKAutoLayoutExample/FLKAutoLayoutExample-Prefix.pch";
