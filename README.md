@@ -7,7 +7,7 @@ FLKAutoLayout creates simple constraints with a readable syntax and provides man
 
 FLKAutoLayout provides methods on UIView *instances* for simple layout constraints like width and height or constraining an edge of one view to another. Furthermore it provides methods on the UIView *class* for more complex layout constraints where more than two views are involved.
 
-For some examples of how to setup constraints please check the [example project](/dkduck/FLKAutoLayout/tree/master/Example).
+For some examples of how to setup constraints please check the [example project](./Example/).
 
 ## Example
 
