@@ -109,9 +109,9 @@ Constrain width and height of multiple views:
 
 ``` objective-c
 // constrain all views to the same height
-[UIView constrainHeightForViews:views];
+[UIView equalHeightForViews:views];
 // constrain all views to the same width
-[UIView constrainWidthForViews:views];
+[UIView equalWidthForViews:views];
 ```
 
 Spacing out multiple views:
