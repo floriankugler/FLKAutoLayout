@@ -39,8 +39,10 @@
 - (NSArray*)constrainHeightToView:(UIView*)view predicate:(NSString*)predicate;
 
 
-- (NSArray*)constrainTopSpaceToView:(UIView*)view predicate:(NSString*)predicate;
 - (NSArray*)constrainLeadingSpaceToView:(UIView*)view predicate:(NSString*)predicate;
+- (NSArray *)constrainTrailingSpaceToView:(UIView *)view predicate:(NSString *)predicate;
+- (NSArray*)constrainTopSpaceToView:(UIView*)view predicate:(NSString*)predicate;
+- (NSArray*)constrainBottomSpaceToView:(UIView*)view predicate:(NSString*)predicate;
 
 
 
