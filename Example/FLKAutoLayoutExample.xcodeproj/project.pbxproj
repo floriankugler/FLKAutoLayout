@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		D25890E2289F514B029FB2C1 /* FLKAutoLayoutPredicateList.m in Sources */ = {isa = PBXBuildFile; fileRef = D25893100E21529EC729CD45 /* FLKAutoLayoutPredicateList.m */; };
-		D25890E7028154D08256DD5B /* UIView+FLKAutoLayoutPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2589CE3E06E3C1BDBAA6E4D /* UIView+FLKAutoLayoutPredicate.m */; };
+		D25890E7028154D08256DD5B /* FLKView+FLKAutoLayoutPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2589CE3E06E3C1BDBAA6E4D /* FLKView+FLKAutoLayoutPredicate.m */; };
 		D25892F710533354FE585D79 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2589A00DA36706410F2FF43 /* Default.png */; };
 		D25894AD65617DDD20B33895 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2589315A1FCC3872BCE08A3 /* UIKit.framework */; };
 		D25895195D0A2B52DEBC40AD /* ALEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D258991D66A043E0B2B8A4FB /* ALEViewController.m */; };
 		D258961421031A44A20C2682 /* ALEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D25891F4DE4FC86CE6288AED /* ALEAppDelegate.m */; };
 		D25896224DD77634EBB7EE5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D258996C5AF1F44244340485 /* CoreGraphics.framework */; };
-		D2589629DDDB1FBDF4CB8176 /* UIView+FLKAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D2589A6C2849EBC7A5667EBD /* UIView+FLKAutoLayout.m */; };
+		D2589629DDDB1FBDF4CB8176 /* FLKView+FLKAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D2589A6C2849EBC7A5667EBD /* FLKView+FLKAutoLayout.m */; };
 		D25896471D947694F031CD39 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D25896E56724351AF80FF6A1 /* Default-568h@2x.png */; };
 		D258983D2B6E96327BD31312 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D25899A24A7CC449C6008F97 /* Default@2x.png */; };
 		D25899161318C0DC8E98B4AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D258922E3E62C9A480633EFD /* main.m */; };
@@ -33,17 +33,17 @@
 		D25893100E21529EC729CD45 /* FLKAutoLayoutPredicateList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLKAutoLayoutPredicateList.m; sourceTree = "<group>"; };
 		D2589315A1FCC3872BCE08A3 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D25896E56724351AF80FF6A1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		D258975FF7C331013F1B8610 /* UIView+FLKAutoLayoutPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FLKAutoLayoutPredicate.h"; sourceTree = "<group>"; };
+		D258975FF7C331013F1B8610 /* FLKView+FLKAutoLayoutPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FLKView+FLKAutoLayoutPredicate.h"; sourceTree = "<group>"; };
 		D25897CEF2803AC350FA95AA /* FLKAutoLayoutExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FLKAutoLayoutExample-Prefix.pch"; sourceTree = "<group>"; };
 		D258991D66A043E0B2B8A4FB /* ALEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALEViewController.m; sourceTree = "<group>"; };
 		D258996C5AF1F44244340485 /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D25899A24A7CC449C6008F97 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D2589A00DA36706410F2FF43 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D2589A6168A5E70EEFFF7E57 /* FLKAutoLayoutExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLKAutoLayoutExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2589A6C2849EBC7A5667EBD /* UIView+FLKAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FLKAutoLayout.m"; sourceTree = "<group>"; };
-		D2589B5428D64F1246324533 /* UIView+FLKAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FLKAutoLayout.h"; sourceTree = "<group>"; };
+		D2589A6C2849EBC7A5667EBD /* FLKView+FLKAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FLKView+FLKAutoLayout.m"; sourceTree = "<group>"; };
+		D2589B5428D64F1246324533 /* FLKView+FLKAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FLKView+FLKAutoLayout.h"; sourceTree = "<group>"; };
 		D2589B6B95DE819AACCA7B97 /* ALEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALEViewController.h; sourceTree = "<group>"; };
-		D2589CE3E06E3C1BDBAA6E4D /* UIView+FLKAutoLayoutPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FLKAutoLayoutPredicate.m"; sourceTree = "<group>"; };
+		D2589CE3E06E3C1BDBAA6E4D /* FLKView+FLKAutoLayoutPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FLKView+FLKAutoLayoutPredicate.m"; sourceTree = "<group>"; };
 		D2589D61426346262D79CDFE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,12 +97,12 @@
 			isa = PBXGroup;
 			children = (
 				A4F965BD188686A40049F32E /* FLKAutoLayoutDefinitions.h */,
-				D2589B5428D64F1246324533 /* UIView+FLKAutoLayout.h */,
-				D2589A6C2849EBC7A5667EBD /* UIView+FLKAutoLayout.m */,
+				D2589B5428D64F1246324533 /* FLKView+FLKAutoLayout.h */,
+				D2589A6C2849EBC7A5667EBD /* FLKView+FLKAutoLayout.m */,
 				D25892438428E1A1FD581109 /* FLKAutoLayoutPredicateList.h */,
 				D25893100E21529EC729CD45 /* FLKAutoLayoutPredicateList.m */,
-				D258975FF7C331013F1B8610 /* UIView+FLKAutoLayoutPredicate.h */,
-				D2589CE3E06E3C1BDBAA6E4D /* UIView+FLKAutoLayoutPredicate.m */,
+				D258975FF7C331013F1B8610 /* FLKView+FLKAutoLayoutPredicate.h */,
+				D2589CE3E06E3C1BDBAA6E4D /* FLKView+FLKAutoLayoutPredicate.m */,
 			);
 			name = FLKAutoLayout;
 			path = ../FLKAutoLayout;
@@ -196,9 +196,9 @@
 				D25899161318C0DC8E98B4AD /* main.m in Sources */,
 				D258961421031A44A20C2682 /* ALEAppDelegate.m in Sources */,
 				D25895195D0A2B52DEBC40AD /* ALEViewController.m in Sources */,
-				D2589629DDDB1FBDF4CB8176 /* UIView+FLKAutoLayout.m in Sources */,
+				D2589629DDDB1FBDF4CB8176 /* FLKView+FLKAutoLayout.m in Sources */,
 				D25890E2289F514B029FB2C1 /* FLKAutoLayoutPredicateList.m in Sources */,
-				D25890E7028154D08256DD5B /* UIView+FLKAutoLayoutPredicate.m in Sources */,
+				D25890E7028154D08256DD5B /* FLKView+FLKAutoLayoutPredicate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FLKAutoLayoutDefinitions.h"
-#import "UIView+FLKAutoLayoutPredicate.h"
+#import "FLKView+FLKAutoLayoutPredicate.h"
 
 
 typedef NSLayoutConstraint* (^predicateBlock)(FLKAutoLayoutPredicate predicate);

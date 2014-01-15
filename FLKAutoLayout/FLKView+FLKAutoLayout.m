@@ -5,7 +5,7 @@
 //
 
 
-#import "UIView+FLKAutoLayout.h"
+#import "FLKView+FLKAutoLayout.h"
 #import "FLKAutoLayoutPredicateList.h"
 
 typedef NSArray* (^viewChainingBlock)(FLKView* view1, FLKView* view2);

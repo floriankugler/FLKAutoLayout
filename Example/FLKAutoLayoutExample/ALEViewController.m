@@ -6,7 +6,7 @@
 //
 
 #import "ALEViewController.h"
-#import "UIView+FLKAutoLayout.h"
+#import "FLKView+FLKAutoLayout.h"
 
 @interface ALEViewController ()
 

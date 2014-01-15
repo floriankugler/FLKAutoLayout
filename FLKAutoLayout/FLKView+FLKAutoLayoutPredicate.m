@@ -5,7 +5,7 @@
 //
 
 
-#import "UIView+FLKAutoLayoutPredicate.h"
+#import "FLKView+FLKAutoLayoutPredicate.h"
 
 FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGFloat multiplier, CGFloat constant, FLKLayoutPriority priority) {
     FLKAutoLayoutPredicate predicate;
