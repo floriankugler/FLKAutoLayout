@@ -7,20 +7,21 @@
 
 #import <Foundation/Foundation.h>
 
+#import "FLKAutoLayoutDefinitions.h"
 
 typedef struct {
     NSLayoutRelation relation;
     CGFloat multiplier;
     CGFloat constant;
-    UILayoutPriority priority;
+    FLKLayoutPriority priority;
 } FLKAutoLayoutPredicate;
 
-extern FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGFloat multiplier, CGFloat constant, UILayoutPriority priority);
+extern FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGFloat multiplier, CGFloat constant, FLKLayoutPriority priority);
 
 
-@interface UIView (FLKAutoLayoutPredicate)
+@interface FLKView (FLKAutoLayoutPredicate)
 
-- (NSLayoutConstraint*)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(UIView*)toView attribute:(NSLayoutAttribute)attribute;
-- (NSLayoutConstraint*)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(UIView*)view fromAttribute:(NSLayoutAttribute)fromAttribute toAttribute:(NSLayoutAttribute)toAttribute;
+- (NSLayoutConstraint*)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(FLKView*)toView attribute:(NSLayoutAttribute)attribute;
+- (NSLayoutConstraint*)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(FLKView*)view fromAttribute:(NSLayoutAttribute)fromAttribute toAttribute:(NSLayoutAttribute)toAttribute;
 
 @end

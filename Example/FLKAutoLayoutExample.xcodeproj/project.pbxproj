@@ -23,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A4F965BD188686A40049F32E /* FLKAutoLayoutDefinitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLKAutoLayoutDefinitions.h; sourceTree = "<group>"; };
 		D2589196DC1C27ABC9246B94 /* FLKAutoLayoutExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "FLKAutoLayoutExample-Info.plist"; sourceTree = "<group>"; };
 		D25891F4DE4FC86CE6288AED /* ALEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALEAppDelegate.m; sourceTree = "<group>"; };
 		D258922E3E62C9A480633EFD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,6 +96,7 @@
 		D2589DC549DA66B38317BCD7 /* FLKAutoLayout */ = {
 			isa = PBXGroup;
 			children = (
+				A4F965BD188686A40049F32E /* FLKAutoLayoutDefinitions.h */,
 				D2589B5428D64F1246324533 /* UIView+FLKAutoLayout.h */,
 				D2589A6C2849EBC7A5667EBD /* UIView+FLKAutoLayout.m */,
 				D25892438428E1A1FD581109 /* FLKAutoLayoutPredicateList.h */,
@@ -153,6 +155,8 @@
 /* Begin PBXProject section */
 		D25891A2D57B9E45D6175414 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = D2589B6F95738E1650423339 /* Build configuration list for PBXProject "FLKAutoLayoutExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
