@@ -120,7 +120,7 @@ Spacing out multiple views:
 // space out views horizontally with 20 points in between
 [UIView spaceOutViewsHorizontally:views predicate:@"20"];
 // space out views vertically with no space in between
-[UIView spaceOutViewsHorizontally:views predicate:nil];
+[UIView spaceOutViewsVertically:views predicate:nil];
 
 // Distribute views according to their horizontal center
 [UIView distributeCenterXOfViews:views inView:containerView];
