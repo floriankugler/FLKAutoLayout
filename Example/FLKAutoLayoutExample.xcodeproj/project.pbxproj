@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		47142856975F4391AC00A77B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A17C0A90F6E4590B60CEA8A /* libPods.a */; settings = {}; };
 		D25890E2289F514B029FB2C1 /* FLKAutoLayoutPredicateList.m in Sources */ = {isa = PBXBuildFile; fileRef = D25893100E21529EC729CD45 /* FLKAutoLayoutPredicateList.m */; };
 		D25890E7028154D08256DD5B /* UIView+FLKAutoLayoutPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2589CE3E06E3C1BDBAA6E4D /* UIView+FLKAutoLayoutPredicate.m */; };
 		D25892F710533354FE585D79 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2589A00DA36706410F2FF43 /* Default.png */; };
@@ -26,8 +25,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		006875B0EB834B5ABE8D76C2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		5A17C0A90F6E4590B60CEA8A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPods.a; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D25890578AFE13EE9F7CB771 /* UIView+FLKAutoLayoutDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FLKAutoLayoutDebug.h"; sourceTree = "<group>"; };
 		D2589196DC1C27ABC9246B94 /* FLKAutoLayoutExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "FLKAutoLayoutExample-Info.plist"; sourceTree = "<group>"; };
 		D25891F4DE4FC86CE6288AED /* ALEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALEAppDelegate.m; sourceTree = "<group>"; };
@@ -63,7 +60,6 @@
 				D25894AD65617DDD20B33895 /* UIKit.framework in Frameworks */,
 				D2589E0417D1A58A281BE3E0 /* Foundation.framework in Frameworks */,
 				D25896224DD77634EBB7EE5D /* CoreGraphics.framework in Frameworks */,
-				47142856975F4391AC00A77B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +86,6 @@
 				D2589315A1FCC3872BCE08A3 /* UIKit.framework */,
 				D258928B2209A19F771F3F76 /* Foundation.framework */,
 				D258996C5AF1F44244340485 /* CoreGraphics.framework */,
-				5A17C0A90F6E4590B60CEA8A /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -128,7 +123,6 @@
 				D25897FECFE03E2743C5103E /* Frameworks */,
 				D2589F88E658A3A068159D66 /* FLKAutoLayoutExample */,
 				D2589DC549DA66B38317BCD7 /* FLKAutoLayout */,
-				006875B0EB834B5ABE8D76C2 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,11 +145,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2589311092CA0CF35AE3DD9 /* Build configuration list for PBXNativeTarget "FLKAutoLayoutExample" */;
 			buildPhases = (
-				CC5172A4894F4DCA907AA342 /* Check Pods Manifest.lock */,
 				D258919A7A1A616F1AE0863B /* Sources */,
 				D258960A1AE9FDB3ECCE7F93 /* Frameworks */,
 				D258907F1D120F86AA014E91 /* Resources */,
-				12B7ABACA36143FBB8A0C776 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,8 +173,6 @@
 			mainGroup = D2589E30C0E4238B1DA7811C;
 			productRefGroup = D2589CB0FC1A1A5BD2125AE9 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				D258909ADA432B416E66516E /* FLKAutoLayoutExample */,
@@ -203,39 +193,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		12B7ABACA36143FBB8A0C776 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 1;
-		};
-		CC5172A4894F4DCA907AA342 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 1;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D258919A7A1A616F1AE0863B /* Sources */ = {
@@ -269,7 +226,6 @@
 /* Begin XCBuildConfiguration section */
 		D2589187FE2EA0E4B2A9124C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 006875B0EB834B5ABE8D76C2 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FLKAutoLayoutExample/FLKAutoLayoutExample-Prefix.pch";
@@ -313,7 +269,6 @@
 		};
 		D25898916CBFD2FB95300B95 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 006875B0EB834B5ABE8D76C2 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FLKAutoLayoutExample/FLKAutoLayoutExample-Prefix.pch";

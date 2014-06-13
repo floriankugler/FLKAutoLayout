@@ -129,6 +129,47 @@
     [UIView alignBottomEdgesOfViews:buttonViews];
     [UIView distributeCenterXOfViews:buttonViews inView:buttonContainer];
 
+
+    UIView *test1 = [[UIView alloc] init];
+    [backgroundView addSubview:test1];
+    [test1 constrainWidth:@"400" height:@"200"];
+    [test1 alignTop:nil leading:@"100" toView:backgroundView];
+    test1.backgroundColor = [UIColor greenColor];
+
+    UIView *test2 = [[UIView alloc] init];
+    [test1 addSubview:test2];
+    [test2 constrainWidth:@"300" height:@"50"];
+    [test2 alignTop:@"20" leading:@"40" toView:test1];
+    test2.backgroundColor = [UIColor redColor];
+
+    UIView *test3 = [[UIView alloc] init];
+    [test1 addSubview:test3];
+    [test3 constrainWidth:@"300" height:@"50"];
+    [test3 alignTop:@"100" leading:@"0" toView:test1];
+    test3.backgroundColor = [UIColor redColor];
+
+    UIView *test4 = [[UIView alloc] init];
+    [test3 addSubview:test4];
+    test4.backgroundColor = [UIColor blueColor];
+    test4.translatesAutoresizingMaskIntoConstraints = NO;
+
+    test3.clipsToBounds = NO;
+    test2.clipsToBounds = NO;
+    test1.clipsToBounds = NO;
+
+
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:test4
+                                                                  attribute:NSLayoutAttributeRight
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:test2
+                                                                  attribute:NSLayoutAttributeRight
+                                                                 multiplier:1
+                                                                   constant:0];
+    [backgroundView addConstraint:constraint];
+
+    [test4 alignTop:nil bottom:nil toView:test3];
+    [test4 constrainWidth:@"2"];
+//    [test4 alignAttribute:NSLayoutAttributeLeft toAttribute:NSLayoutAttributeRight ofView:test2 predicate:@"*0"];
 }
 
 

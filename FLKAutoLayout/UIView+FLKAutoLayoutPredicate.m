@@ -17,16 +17,6 @@ FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGF
 }
 
 
-FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGFloat multiplier, CGFloat constant, UILayoutPriority priority) {
-    FLKAutoLayoutPredicate predicate;
-    predicate.relation = relation;
-    predicate.multiplier = multiplier;
-    predicate.constant = constant;
-    predicate.priority = priority;
-    return predicate;
-}
-
-
 @implementation UIView (FLKAutoLayoutPredicate)
 
 
