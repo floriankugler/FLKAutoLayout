@@ -5,9 +5,9 @@
 //
 
 
-#import "UIView+FLKAutoLayoutPredicate.h"
+#import "FLKView+FLKAutoLayoutPredicate.h"
 
-FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGFloat multiplier, CGFloat constant, UILayoutPriority priority) {
+FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGFloat multiplier, CGFloat constant, FLKLayoutPriority priority) {
     FLKAutoLayoutPredicate predicate;
     predicate.relation = relation;
     predicate.multiplier = multiplier;
@@ -17,14 +17,14 @@ FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGF
 }
 
 
-@implementation UIView (FLKAutoLayoutPredicate)
+@implementation FLKView (FLKAutoLayoutPredicate)
 
-- (NSLayoutConstraint*)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(UIView*)toView attribute:(NSLayoutAttribute)attribute {
+- (NSLayoutConstraint*)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(FLKView*)toView attribute:(NSLayoutAttribute)attribute {
     return [self applyPredicate:predicate toView:toView fromAttribute:attribute toAttribute:attribute];
 }
 
-- (NSLayoutConstraint*)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(UIView*)view fromAttribute:(NSLayoutAttribute)fromAttribute toAttribute:(NSLayoutAttribute)toAttribute {
-    UIView* commonSuperview = [self commonSuperviewWithView:view];
+- (NSLayoutConstraint*)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(FLKView*)view fromAttribute:(NSLayoutAttribute)fromAttribute toAttribute:(NSLayoutAttribute)toAttribute {
+    FLKView* commonSuperview = [self commonSuperviewWithView:view];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     NSLayoutConstraint* constraint = [NSLayoutConstraint constraintWithItem:self
                                                                   attribute:fromAttribute
@@ -40,7 +40,7 @@ FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGF
     return constraint;
 }
 
-- (UIView*)commonSuperviewWithView:(UIView*)view {
+- (FLKView*)commonSuperviewWithView:(FLKView*)view {
     if (!view) {
         return self;
     } else if (self.superview == view) {
@@ -50,20 +50,20 @@ FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGF
     } else if (self.superview == view.superview) {
         return self.superview;
     } else {
-        UIView* commonSuperview = [self traverseViewTreeForCommonSuperViewWithView:view];
+        FLKView* commonSuperview = [self traverseViewTreeForCommonSuperViewWithView:view];
         NSAssert(commonSuperview, @"Cannot find common superview of %@ and %@. Finding common superview in view tree not implemented yet", self, view);
         return commonSuperview;
     }
 }
 
-- (UIView*)traverseViewTreeForCommonSuperViewWithView:(UIView*)view {
+- (FLKView*)traverseViewTreeForCommonSuperViewWithView:(FLKView*)view {
     NSMutableOrderedSet* selfSuperviews = [NSMutableOrderedSet orderedSet];
-    UIView* selfSuperview = self;
+    FLKView* selfSuperview = self;
     while (selfSuperview) {
         [selfSuperviews addObject:selfSuperview];
         selfSuperview = selfSuperview.superview;
     }
-    UIView* superview = view;
+    FLKView* superview = view;
     while (superview) {
         if ([selfSuperviews containsObject:superview]) {
             return superview;

@@ -13,7 +13,7 @@
     NSMutableArray* predicates;
 }
 
-+ predicateListFromString:(NSString*)string {
++ (id)predicateListFromString:(NSString*)string {
     FLKAutoLayoutPredicateList* predicateList = [[FLKAutoLayoutPredicateList alloc] init];
     NSArray* predicateStrings = [string componentsSeparatedByString:@","];
     if (!predicateStrings.count) {
