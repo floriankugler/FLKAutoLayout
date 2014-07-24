@@ -124,6 +124,10 @@ typedef NSArray* (^viewChainingBlock)(UIView* view1, UIView* view2);
     return [self alignAttribute:NSLayoutAttributeHeight toView:view predicate:predicate];
 }
 
+- (NSArray*)constrainAspectRatio:(NSString*)predicate {
+    return [self alignAttribute:NSLayoutAttributeWidth toAttribute:NSLayoutAttributeHeight ofView:self predicate:predicate];
+}
+
 
 #pragma mark Spacing out two views
 

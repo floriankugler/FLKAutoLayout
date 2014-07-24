@@ -38,6 +38,7 @@
 - (NSArray*)constrainWidthToView:(UIView*)view predicate:(NSString*)predicate;
 - (NSArray*)constrainHeightToView:(UIView*)view predicate:(NSString*)predicate;
 
+- (NSArray*)constrainAspectRatio:(NSString*)predicate;
 
 - (NSArray*)constrainTopSpaceToView:(UIView*)view predicate:(NSString*)predicate;
 - (NSArray*)constrainLeadingSpaceToView:(UIView*)view predicate:(NSString*)predicate;
