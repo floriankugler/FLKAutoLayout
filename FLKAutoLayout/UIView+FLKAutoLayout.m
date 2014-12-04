@@ -131,8 +131,16 @@ typedef NSArray* (^viewChainingBlock)(UIView* view1, UIView* view2);
     return [self alignAttribute:NSLayoutAttributeLeading toAttribute:NSLayoutAttributeTrailing ofView:view predicate:predicate];
 }
 
+-(NSArray *)constrainTrailingSpaceToView:(UIView *)view predicate:(NSString *)predicate {
+    return [self alignAttribute:NSLayoutAttributeTrailing toAttribute:NSLayoutAttributeLeading ofView:view predicate:predicate];
+}
+
 - (NSArray*)constrainTopSpaceToView:(UIView*)view predicate:(NSString*)predicate {
     return [self alignAttribute:NSLayoutAttributeTop toAttribute:NSLayoutAttributeBottom ofView:view predicate:predicate];
+}
+
+- (NSArray*)constrainBottomSpaceToView:(UIView*)view predicate:(NSString*)predicate {
+    return [self alignAttribute:NSLayoutAttributeBottom toAttribute:NSLayoutAttributeTop ofView:view predicate:predicate];
 }
 
 
