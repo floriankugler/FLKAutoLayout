@@ -41,6 +41,7 @@ FOUNDATION_EXTERN NSString * const FLKNoConstraint;
 - (NSArray*)constrainWidthToView:(UIView*)view predicate:(NSString*)predicate;
 - (NSArray*)constrainHeightToView:(UIView*)view predicate:(NSString*)predicate;
 
+- (NSArray*)constrainAspectRatio:(NSString*)predicate;
 
 - (NSArray*)constrainLeadingSpaceToView:(UIView*)view predicate:(NSString*)predicate;
 - (NSArray *)constrainTrailingSpaceToView:(UIView *)view predicate:(NSString *)predicate;
