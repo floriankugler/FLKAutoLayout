@@ -68,7 +68,7 @@
         bar.backgroundColor = [UIColor greenColor];
         [boxContainer addSubview:bar];
         [boxViews addObject:bar];
-        bar.flk_nameTag = [NSString stringWithFormat:@"Bar view %i", i];
+        bar.flk_nameTag = [NSString stringWithFormat:@"Bar view %lu", (unsigned long)i];
         [bar constrainWidth:@"80"];
     }
     [boxViews[0] constrainWidth:@"100" height:@"100"];
@@ -84,7 +84,7 @@
     for (NSUInteger i = 0; i < boxViews.count; i++) {
         UILabel* label = [[UILabel alloc] init];
         label.backgroundColor = [UIColor whiteColor];
-        label.text = [NSString stringWithFormat:@"Label %d", i];
+        label.text = [NSString stringWithFormat:@"Label %lu", (unsigned long)i];
         [rightBlock addSubview:label];
         [labels addObject:label];
     }
@@ -97,7 +97,7 @@
     for (NSUInteger i = 0; i < boxViews.count; i++) {
         UITextField* textField = [[UITextField alloc] init];
         textField.borderStyle = UITextBorderStyleRoundedRect;
-        textField.text = [NSString stringWithFormat:@"text field %d", i];
+        textField.text = [NSString stringWithFormat:@"text field %lu", (unsigned long)i];
         [rightBlock addSubview:textField];
         [textFields addObject:textField];
     }
