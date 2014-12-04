@@ -72,7 +72,7 @@ Constraining width & height:
 [view constrainWidth:@"400" height:@"300"];
 // or relative to another view
 [view constrainWidthToView:otherView predicate:@"*.3"]; // 30% of otherView's width
-[view constrainHeightToView:otherView predicate:@">=*.5"]; // 50% of otherView's width
+[view constrainHeightToView:otherView predicate:@">=*.5"]; // at least 50% of otherView's height
 ```
 
 Spacing out two views:
