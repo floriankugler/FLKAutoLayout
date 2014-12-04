@@ -63,6 +63,21 @@ Aligning edges of one view to another:
 [view alignCenterWithView:otherView];
 ```
 
+Constraining view to another:
+``` objective-c
+// constrain leading edge of the view to the trailing edge of the other
+ [view constrainLeadingSpaceToView:otherView predicate:@"0"];
+
+ // constrain trailing edge of the view to the leading edge of the other
+ [view constrainTrailingSpaceToView:otherView predicate:@"0"];
+
+ // constrain top edge of the view to the bottom edge of the other
+ [view constrainTopSpaceToView:otherView predicate:@"0"];
+
+ // constrain bottom edge of the view to the top edge of the other
+ [view constrainBottomSpaceToView:otherView predicate:@"0"];
+```
+
 Constraining width & height:
 
 ``` objective-c
