@@ -12,18 +12,11 @@ static const CGFloat ExerciseAmbiguityInterval = .5;
 static char *const NameTagKey = "flk_nameTag";
 
 
-@interface UIView ()
-
-- (id)_autolayoutTrace;
-
-@end
-
-
 @implementation UIView (FLKAutoLayoutDebug)
 
 - (void)flk_exerciseAmbiguityInLayout:(BOOL)recursive
 {
-    #ifdef DEBUG
+#ifdef DEBUG
     if (self.hasAmbiguousLayout) {
         [NSTimer scheduledTimerWithTimeInterval:ExerciseAmbiguityInterval target:self selector:@selector(flk_changeAmbiguousLayout) userInfo:nil repeats:YES];
     }
@@ -32,21 +25,24 @@ static char *const NameTagKey = "flk_nameTag";
             [subview flk_exerciseAmbiguityInLayout:recursive];
         }
     }
-    #endif
+#endif
 }
 
 - (void)flk_changeAmbiguousLayout
 {
+#ifdef DEBUG
     [self exerciseAmbiguityInLayout];
+#endif
 }
 
 - (NSString *)flk_autolayoutTrace
 {
+#ifdef DEBUG
     if ([self respondsToSelector:@selector(_autolayoutTrace)]) {
-        return [self _autolayoutTrace];
-    } else {
-        return nil;
+        return [self performSelector:@selector(_autolayoutTrace)];
     }
+#endif
+    return nil;
 }
 
 - (void)setFlk_nameTag:(NSString *)nameTag
