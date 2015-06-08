@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9295C98A1B2583E200C388EB /* FLKAutoLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9295C9891B2583C800C388EB /* FLKAutoLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		92C9BBF81B19969E00D79B06 /* FLKAutoLayoutPredicateList.h in Headers */ = {isa = PBXBuildFile; fileRef = 92C9BBEE1B19969E00D79B06 /* FLKAutoLayoutPredicateList.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		92C9BBF91B19969E00D79B06 /* FLKAutoLayoutPredicateList.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C9BBEF1B19969E00D79B06 /* FLKAutoLayoutPredicateList.m */; };
 		92C9BBFA1B19969E00D79B06 /* NSLayoutConstraint+FLKAutoLayoutDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 92C9BBF01B19969E00D79B06 /* NSLayoutConstraint+FLKAutoLayoutDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9295C9891B2583C800C388EB /* FLKAutoLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLKAutoLayout.h; sourceTree = "<group>"; };
 		92C9BBCF1B19966D00D79B06 /* FLKAutoLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FLKAutoLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C9BBD31B19966D00D79B06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92C9BBEE1B19969E00D79B06 /* FLKAutoLayoutPredicateList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLKAutoLayoutPredicateList.h; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		92C9BBD11B19966D00D79B06 /* FLKAutoLayout */ = {
 			isa = PBXGroup;
 			children = (
+				9295C9891B2583C800C388EB /* FLKAutoLayout.h */,
 				92C9BBEE1B19969E00D79B06 /* FLKAutoLayoutPredicateList.h */,
 				92C9BBEF1B19969E00D79B06 /* FLKAutoLayoutPredicateList.m */,
 				92C9BBF01B19969E00D79B06 /* NSLayoutConstraint+FLKAutoLayoutDebug.h */,
@@ -94,6 +97,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9295C98A1B2583E200C388EB /* FLKAutoLayout.h in Headers */,
 				92C9BC001B19969E00D79B06 /* UIView+FLKAutoLayoutPredicate.h in Headers */,
 				92C9BBFE1B19969E00D79B06 /* UIView+FLKAutoLayoutDebug.h in Headers */,
 				92C9BBFC1B19969E00D79B06 /* UIView+FLKAutoLayout.h in Headers */,
