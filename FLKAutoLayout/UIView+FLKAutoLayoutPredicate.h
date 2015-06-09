@@ -6,7 +6,7 @@
 
 
 #import <Foundation/Foundation.h>
-
+@import UIKit;
 
 typedef struct {
     NSLayoutRelation relation;
