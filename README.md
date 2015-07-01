@@ -1,6 +1,8 @@
 FLKAutoLayout
 =============
 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/floriankugler/FLKAutoLayout)
+
 FLKAutoLayout is a category on UIView which makes it easy to setup layout constraints in code.
 
 FLKAutoLayout creates simple constraints with a readable syntax and provides many convenience methods to setup more complex constraints between multiple views at once. It automatically adds the constraints to the nearest common superview of the views involved and sets the translatesAutoresizingMaskIntoConstraints property on those views to NO.
