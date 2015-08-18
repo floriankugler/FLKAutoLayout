@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51489C1C1B8385FF00690EFF /* UIViewController+FLKAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 51489C1B1B8385FF00690EFF /* UIViewController+FLKAutoLayout.m */; };
 		D25890E2289F514B029FB2C1 /* FLKAutoLayoutPredicateList.m in Sources */ = {isa = PBXBuildFile; fileRef = D25893100E21529EC729CD45 /* FLKAutoLayoutPredicateList.m */; };
 		D25890E7028154D08256DD5B /* UIView+FLKAutoLayoutPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2589CE3E06E3C1BDBAA6E4D /* UIView+FLKAutoLayoutPredicate.m */; };
 		D25892F710533354FE585D79 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2589A00DA36706410F2FF43 /* Default.png */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		51489C1A1B8385FF00690EFF /* UIViewController+FLKAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FLKAutoLayout.h"; sourceTree = "<group>"; };
+		51489C1B1B8385FF00690EFF /* UIViewController+FLKAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FLKAutoLayout.m"; sourceTree = "<group>"; };
 		D25890578AFE13EE9F7CB771 /* UIView+FLKAutoLayoutDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FLKAutoLayoutDebug.h"; sourceTree = "<group>"; };
 		D2589196DC1C27ABC9246B94 /* FLKAutoLayoutExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "FLKAutoLayoutExample-Info.plist"; sourceTree = "<group>"; };
 		D25891F4DE4FC86CE6288AED /* ALEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALEAppDelegate.m; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 				D25890578AFE13EE9F7CB771 /* UIView+FLKAutoLayoutDebug.h */,
 				D2589A2CD5A4392EBE0603A4 /* NSLayoutConstraint+FLKAutoLayoutDebug.m */,
 				D25899CA8D1057836AA75DC9 /* NSLayoutConstraint+FLKAutoLayoutDebug.h */,
+				51489C1A1B8385FF00690EFF /* UIViewController+FLKAutoLayout.h */,
+				51489C1B1B8385FF00690EFF /* UIViewController+FLKAutoLayout.m */,
 			);
 			name = FLKAutoLayout;
 			path = ../FLKAutoLayout;
@@ -163,6 +168,8 @@
 /* Begin PBXProject section */
 		D25891A2D57B9E45D6175414 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = D2589B6F95738E1650423339 /* Build configuration list for PBXProject "FLKAutoLayoutExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -206,6 +213,7 @@
 				D25890E2289F514B029FB2C1 /* FLKAutoLayoutPredicateList.m in Sources */,
 				D25890E7028154D08256DD5B /* UIView+FLKAutoLayoutPredicate.m in Sources */,
 				D2589757DEBFB9167B8481F5 /* UIView+FLKAutoLayoutDebug.m in Sources */,
+				51489C1C1B8385FF00690EFF /* UIViewController+FLKAutoLayout.m in Sources */,
 				D2589814C9785D2454FD0B48 /* NSLayoutConstraint+FLKAutoLayoutDebug.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

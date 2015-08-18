@@ -6,6 +6,7 @@
 
 
 #import "UIView+FLKAutoLayoutPredicate.h"
+#import "UIViewController+FLKAutoLayout.h"
 
 FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGFloat multiplier, CGFloat constant, UILayoutPriority priority) {
     FLKAutoLayoutPredicate predicate;
@@ -20,20 +21,32 @@ FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGF
 @implementation UIView (FLKAutoLayoutPredicate)
 
 
-- (NSLayoutConstraint*)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(UIView*)toView attribute:(NSLayoutAttribute)attribute {
-    return [self applyPredicate:predicate toView:toView fromAttribute:attribute toAttribute:attribute];
+- (NSLayoutConstraint*)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(id)viewOrLayoutGuide attribute:(NSLayoutAttribute)attribute {
+    return [self applyPredicate:predicate toView:viewOrLayoutGuide fromAttribute:attribute toAttribute:attribute];
 }
 
-- (NSLayoutConstraint*)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(UIView*)view fromAttribute:(NSLayoutAttribute)fromAttribute toAttribute:(NSLayoutAttribute)toAttribute {
+- (NSLayoutConstraint*)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(id)viewOrLayoutGuide fromAttribute:(NSLayoutAttribute)fromAttribute toAttribute:(NSLayoutAttribute)toAttribute {
     if (predicate.priority > UILayoutPriorityRequired) return nil;
 
-    UIView* commonSuperview = [self commonSuperviewWithView:view];
+    UIView* view;
+    id toItem;
+    UIView* commonSuperview;
+    if ([viewOrLayoutGuide isKindOfClass:[FLKAutoLayoutGuide class]]) {
+        view = [viewOrLayoutGuide containerView];
+        toItem = [viewOrLayoutGuide layoutGuide];
+        commonSuperview = view;
+    } else {
+        view = viewOrLayoutGuide;
+        toItem = viewOrLayoutGuide;
+        commonSuperview = [self commonSuperviewWithView:view];
+    }
+
     self.translatesAutoresizingMaskIntoConstraints = NO;
 
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self
                                               attribute:fromAttribute
                                               relatedBy:predicate.relation
-                                                 toItem:view
+                                                 toItem:toItem
                                               attribute:toAttribute
                                              multiplier:predicate.multiplier
                                                constant:predicate.constant];
