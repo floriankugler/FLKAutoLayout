@@ -10,8 +10,6 @@
 
 @interface UIView (FLKAutoLayoutDebug)
 
-@property (nonatomic, strong) NSString *flk_nameTag;
-
 - (void)flk_exerciseAmbiguityInLayout:(BOOL)recursive;
 - (NSString *)flk_autolayoutTrace;
 

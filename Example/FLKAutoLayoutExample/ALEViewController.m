@@ -8,6 +8,7 @@
 #import "ALEViewController.h"
 #import "UIView+FLKAutoLayout.h"
 #import "UIView+FLKAutoLayoutDebug.h"
+#import "NSObject+FLKAutoLayoutDebug.h"
 
 @interface ALEViewController ()
 

@@ -6,7 +6,7 @@
 
 
 #import "NSLayoutConstraint+FLKAutoLayoutDebug.h"
-#import "UIView+FLKAutoLayoutDebug.h"
+#import "NSObject+FLKAutoLayoutDebug.h"
 
 
 @interface NSLayoutConstraint ()

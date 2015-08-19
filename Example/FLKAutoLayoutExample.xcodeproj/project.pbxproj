@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		51489C1C1B8385FF00690EFF /* UIViewController+FLKAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 51489C1B1B8385FF00690EFF /* UIViewController+FLKAutoLayout.m */; };
+		51ACA0CB1B84695F00498926 /* NSObject+FLKAutoLayoutDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 51ACA0CA1B84695F00498926 /* NSObject+FLKAutoLayoutDebug.m */; };
 		D25890E2289F514B029FB2C1 /* FLKAutoLayoutPredicateList.m in Sources */ = {isa = PBXBuildFile; fileRef = D25893100E21529EC729CD45 /* FLKAutoLayoutPredicateList.m */; };
 		D25890E7028154D08256DD5B /* UIView+FLKAutoLayoutPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2589CE3E06E3C1BDBAA6E4D /* UIView+FLKAutoLayoutPredicate.m */; };
 		D25892F710533354FE585D79 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2589A00DA36706410F2FF43 /* Default.png */; };
@@ -28,6 +29,8 @@
 /* Begin PBXFileReference section */
 		51489C1A1B8385FF00690EFF /* UIViewController+FLKAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FLKAutoLayout.h"; sourceTree = "<group>"; };
 		51489C1B1B8385FF00690EFF /* UIViewController+FLKAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FLKAutoLayout.m"; sourceTree = "<group>"; };
+		51ACA0C91B84695F00498926 /* NSObject+FLKAutoLayoutDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FLKAutoLayoutDebug.h"; sourceTree = "<group>"; };
+		51ACA0CA1B84695F00498926 /* NSObject+FLKAutoLayoutDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FLKAutoLayoutDebug.m"; sourceTree = "<group>"; };
 		D25890578AFE13EE9F7CB771 /* UIView+FLKAutoLayoutDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FLKAutoLayoutDebug.h"; sourceTree = "<group>"; };
 		D2589196DC1C27ABC9246B94 /* FLKAutoLayoutExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "FLKAutoLayoutExample-Info.plist"; sourceTree = "<group>"; };
 		D25891F4DE4FC86CE6288AED /* ALEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALEAppDelegate.m; sourceTree = "<group>"; };
@@ -116,6 +119,8 @@
 				D25899CA8D1057836AA75DC9 /* NSLayoutConstraint+FLKAutoLayoutDebug.h */,
 				51489C1A1B8385FF00690EFF /* UIViewController+FLKAutoLayout.h */,
 				51489C1B1B8385FF00690EFF /* UIViewController+FLKAutoLayout.m */,
+				51ACA0C91B84695F00498926 /* NSObject+FLKAutoLayoutDebug.h */,
+				51ACA0CA1B84695F00498926 /* NSObject+FLKAutoLayoutDebug.m */,
 			);
 			name = FLKAutoLayout;
 			path = ../FLKAutoLayout;
@@ -212,6 +217,7 @@
 				D2589629DDDB1FBDF4CB8176 /* UIView+FLKAutoLayout.m in Sources */,
 				D25890E2289F514B029FB2C1 /* FLKAutoLayoutPredicateList.m in Sources */,
 				D25890E7028154D08256DD5B /* UIView+FLKAutoLayoutPredicate.m in Sources */,
+				51ACA0CB1B84695F00498926 /* NSObject+FLKAutoLayoutDebug.m in Sources */,
 				D2589757DEBFB9167B8481F5 /* UIView+FLKAutoLayoutDebug.m in Sources */,
 				51489C1C1B8385FF00690EFF /* UIViewController+FLKAutoLayout.m in Sources */,
 				D2589814C9785D2454FD0B48 /* NSLayoutConstraint+FLKAutoLayoutDebug.m in Sources */,

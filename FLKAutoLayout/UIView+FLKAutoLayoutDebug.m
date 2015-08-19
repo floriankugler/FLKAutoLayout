@@ -6,11 +6,8 @@
 
 
 #import "UIView+FLKAutoLayoutDebug.h"
-#import <objc/runtime.h>
 
 static const CGFloat ExerciseAmbiguityInterval = .5;
-static char *const NameTagKey = "flk_nameTag";
-
 
 @implementation UIView (FLKAutoLayoutDebug)
 
@@ -43,16 +40,6 @@ static char *const NameTagKey = "flk_nameTag";
     }
 #endif
     return nil;
-}
-
-- (void)setFlk_nameTag:(NSString *)nameTag
-{
-    objc_setAssociatedObject(self, NameTagKey, nameTag, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (NSString *)flk_nameTag
-{
-    return objc_getAssociatedObject(self, NameTagKey);
 }
 
 @end
