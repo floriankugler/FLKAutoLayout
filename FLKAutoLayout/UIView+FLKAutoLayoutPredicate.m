@@ -46,7 +46,7 @@ FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGF
 }
 
 - (UIView*)commonSuperviewWithView:(UIView*)view {
-    if (!view) {
+    if (!view || self == view) {
         return self;
     } else if (self.superview == view) {
         return view;
