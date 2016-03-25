@@ -44,4 +44,28 @@ static const CGFloat ExerciseAmbiguityInterval = .5;
     return nil;
 }
 
+- (void)setFlk_nameTag:(NSString *)nameTag
+{
+    objc_setAssociatedObject(self, NameTagKey, nameTag, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSString *)flk_nameTag
+{
+    return objc_getAssociatedObject(self, NameTagKey);
+}
+
+@end
+
+@implementation UILayoutGuide (FLKAutoLayoutDebug)
+
+- (NSString *)flk_nameTag
+{
+    return objc_getAssociatedObject(self, NameTagKey);
+}
+
+- (void)setFlk_nameTag:(NSString *)nameTag
+{
+    objc_setAssociatedObject(self, NameTagKey, nameTag, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 @end
