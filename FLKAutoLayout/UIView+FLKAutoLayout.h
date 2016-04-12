@@ -3,9 +3,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 FOUNDATION_EXTERN NSString * const FLKNoConstraint;
 
-#define LayoutConstraintArray NSArray <NSLayoutConstraint *>
-#define ViewArray NSArray <UIView *>
-
 /// A collection of categories for UIViews, note the
 /// `view` API can either be a `UIView` subclass or a `FLKAutoLayoutGuide`.
 
@@ -21,22 +18,22 @@ FOUNDATION_EXTERN NSString * const FLKNoConstraint;
 #pragma mark Constraining multiple edges of two views
 
 /// Aligns all 4 edges to another view
-- (LayoutConstraintArray *)alignToView:(id)view;
+- (NSArray <NSLayoutConstraint *> *)alignToView:(id)view;
 
 /// Aligns all 4 edges to another view with different offset
-- (LayoutConstraintArray *)alignTop:(NSString *)top leading:(NSString *)leading bottom:(NSString *)bottom trailing:(NSString *)trailing toView:(id)view;
+- (NSArray <NSLayoutConstraint *> *)alignTop:(NSString *)top leading:(NSString *)leading bottom:(NSString *)bottom trailing:(NSString *)trailing toView:(id)view;
 
 /// Aligns the top and leading edges to another view
-- (LayoutConstraintArray *)alignTop:(NSString *)top leading:(NSString *)leading toView:(id)view;
+- (NSArray <NSLayoutConstraint *> *)alignTop:(NSString *)top leading:(NSString *)leading toView:(id)view;
 
 /// Aligns the bottom and trailing edges to another view
-- (LayoutConstraintArray *)alignBottom:(NSString *)bottom trailing:(NSString *)trailing toView:(id)view;
+- (NSArray <NSLayoutConstraint *> *)alignBottom:(NSString *)bottom trailing:(NSString *)trailing toView:(id)view;
 
 /// Aligns the top and bottom edges to another view
-- (LayoutConstraintArray *)alignTop:(NSString *)top bottom:(NSString *)bottom toView:(id)view;
+- (NSArray <NSLayoutConstraint *> *)alignTop:(NSString *)top bottom:(NSString *)bottom toView:(id)view;
 
 /// Aligns the leading and trailing edges to another view
-- (LayoutConstraintArray *)alignLeading:(NSString *)leading trailing:(NSString *)trailing toView:(id)view;
+- (NSArray <NSLayoutConstraint *> *)alignLeading:(NSString *)leading trailing:(NSString *)trailing toView:(id)view;
 
 
 #pragma mark Constraining one edge of two views
@@ -63,13 +60,13 @@ FOUNDATION_EXTERN NSString * const FLKNoConstraint;
 - (NSLayoutConstraint *)alignCenterYWithView:(id)view predicate:(NSString *)predicate;
 
 /// Aligns the center of X and Y of this view to another
-- (LayoutConstraintArray *)alignCenterWithView:(id)view;
+- (NSArray <NSLayoutConstraint *> *)alignCenterWithView:(id)view;
 
 
 #pragma mark Constrain width & height of a view
 
 /// Constrain both the width and height of self
-- (LayoutConstraintArray *)constrainWidth:(NSString *)widthPredicate height:(NSString *)heightPredicate;
+- (NSArray <NSLayoutConstraint *> *)constrainWidth:(NSString *)widthPredicate height:(NSString *)heightPredicate;
 
 /// Constrain the width of self
 - (NSLayoutConstraint*)constrainWidth:(NSString *)widthPredicate;
@@ -105,52 +102,52 @@ FOUNDATION_EXTERN NSString * const FLKNoConstraint;
 #pragma mark Generic constraint methods for multiple views
 
 /// Align multiple views to align the same sattribute
-+ (LayoutConstraintArray *)alignAttribute:(NSLayoutAttribute)attribute ofViews:(ViewArray *)ofViews toViews:(ViewArray *)toViews predicate:(NSString *)predicate;
++ (NSArray <NSLayoutConstraint *> *)alignAttribute:(NSLayoutAttribute)attribute ofViews:(NSArray <UIView *> *)ofViews toViews:(NSArray <UIView *> *)toViews predicate:(NSString *)predicate;
 
 /// Align multiple views to align the different attributes
-+ (LayoutConstraintArray *)alignAttribute:(NSLayoutAttribute)attribute ofViews:(ViewArray *)views toAttribute:(NSLayoutAttribute)toAttribute ofViews:(ViewArray *)toViews predicate:(NSString *)predicate;
++ (NSArray <NSLayoutConstraint *> *)alignAttribute:(NSLayoutAttribute)attribute ofViews:(NSArray <UIView *> *)views toAttribute:(NSLayoutAttribute)toAttribute ofViews:(NSArray <UIView *> *)toViews predicate:(NSString *)predicate;
 
 
 #pragma mark Constraining widths & heights of multiple views
 
 /// Align multiple views to the same width
-+ (LayoutConstraintArray *)equalWidthForViews:(ViewArray *)views;
++ (NSArray <NSLayoutConstraint *> *)equalWidthForViews:(NSArray <UIView *> *)views;
 
 /// Align multiple views to the same width
-+ (LayoutConstraintArray *)equalHeightForViews:(ViewArray *)views;
++ (NSArray <NSLayoutConstraint *> *)equalHeightForViews:(NSArray <UIView *> *)views;
 
 
 #pragma mark Aligning one edge of multiple views
 
 /// Align multiple views to the same leading edge
-+ (LayoutConstraintArray *)alignLeadingEdgesOfViews:(ViewArray *)views;
++ (NSArray <NSLayoutConstraint *> *)alignLeadingEdgesOfViews:(NSArray <UIView *> *)views;
 
 /// Align multiple views to the same trailing edge
-+ (LayoutConstraintArray *)alignTrailingEdgesOfViews:(ViewArray *)views;
++ (NSArray <NSLayoutConstraint *> *)alignTrailingEdgesOfViews:(NSArray <UIView *> *)views;
 
 /// Align multiple views to the same top edge
-+ (LayoutConstraintArray *)alignTopEdgesOfViews:(ViewArray *)views;
++ (NSArray <NSLayoutConstraint *> *)alignTopEdgesOfViews:(NSArray <UIView *> *)views;
 
 /// Align multiple views to the same bottom edge
-+ (LayoutConstraintArray *)alignBottomEdgesOfViews:(ViewArray *)views;
++ (NSArray <NSLayoutConstraint *> *)alignBottomEdgesOfViews:(NSArray <UIView *> *)views;
 
 /// Align multiple views to the same leading and trailing edge
-+ (LayoutConstraintArray *)alignLeadingAndTrailingEdgesOfViews:(ViewArray *)views;
++ (NSArray <NSLayoutConstraint *> *)alignLeadingAndTrailingEdgesOfViews:(NSArray <UIView *> *)views;
 
 /// Align multiple views to the same top and bottom edge
-+ (LayoutConstraintArray *)alignTopAndBottomEdgesOfViews:(ViewArray *)views;
++ (NSArray <NSLayoutConstraint *> *)alignTopAndBottomEdgesOfViews:(NSArray <UIView *> *)views;
 
 /// Align multiple views via constrainLeadingSpaceToView
-+ (LayoutConstraintArray *)spaceOutViewsHorizontally:(ViewArray *)views predicate:(NSString *)predicate;
++ (NSArray <NSLayoutConstraint *> *)spaceOutViewsHorizontally:(NSArray <UIView *> *)views predicate:(NSString *)predicate;
 
 /// Align multiple views via constrainTopSpaceToView
-+ (LayoutConstraintArray *)spaceOutViewsVertically:(ViewArray *)views predicate:(NSString *)predicate;
++ (NSArray <NSLayoutConstraint *> *)spaceOutViewsVertically:(NSArray <UIView *> *)views predicate:(NSString *)predicate;
 
 /// Align multiple views with the same center X
-+ (LayoutConstraintArray *)distributeCenterXOfViews:(ViewArray *)views inView:(id)view;
++ (NSArray <NSLayoutConstraint *> *)distributeCenterXOfViews:(NSArray <UIView *> *)views inView:(id)view;
 
 /// Align multiple views with the same center Y
-+ (LayoutConstraintArray *)distributeCenterYOfViews:(ViewArray *)views inView:(id)inView;
++ (NSArray <NSLayoutConstraint *> *)distributeCenterYOfViews:(NSArray <UIView *> *)views inView:(id)inView;
 
 @end
 

@@ -9,7 +9,7 @@
 
 
 @implementation FLKAutoLayoutPredicateList {
-    NSMutableArray* predicates;
+    NSMutableArray *predicates;
 }
 
 + predicateListFromString:(NSString *)string {
@@ -35,7 +35,7 @@
 }
 
 - (NSArray *)iteratePredicatesUsingBlock:(predicateBlock)block {
-    NSMutableArray* constraints = [NSMutableArray array];
+    NSMutableArray *constraints = [NSMutableArray array];
     for (NSValue* predicateValue in predicates) {
         FLKAutoLayoutPredicate predicate;
         [predicateValue getValue:&predicate];

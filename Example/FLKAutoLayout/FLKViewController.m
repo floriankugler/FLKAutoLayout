@@ -60,12 +60,12 @@
     
     [boxViews[0] constrainWidth:@"100" height:@"100"];
     [UIView equalWidthForViews:boxViews];
-    [UIView equalHeightForViews:boxViews];
+    id array = [UIView equalHeightForViews:boxViews];
     [boxViews[0] alignCenterXWithView:leftBlock predicate:@"0"];
     [UIView alignLeadingAndTrailingEdgesOfViews:boxViews];
     [UIView distributeCenterYOfViews:boxViews inView:boxContainer];
 
-    NSMutableArray* labels = [NSMutableArray array];
+    NSMutableArray *labels = [NSMutableArray array];
     for (NSUInteger i = 0; i < boxViews.count; i++) {
         UILabel* label = [[UILabel alloc] init];
         label.backgroundColor = [UIColor whiteColor];
@@ -78,7 +78,7 @@
     [UIView alignLeadingAndTrailingEdgesOfViews:labels];
     [UIView alignAttribute:NSLayoutAttributeBottom ofViews:labels toViews:boxViews predicate:@"0"];
 
-    NSMutableArray* textFields = [NSMutableArray array];
+    NSMutableArray *textFields = [NSMutableArray array];
     for (NSUInteger i = 0; i < boxViews.count; i++) {
         UITextField* textField = [[UITextField alloc] init];
         textField.borderStyle = UITextBorderStyleRoundedRect;
@@ -100,7 +100,7 @@
     [buttonContainer alignBottomEdgeWithView:rightBlock predicate:@"-10"];
     [buttonContainer alignTrailingEdgeWithView:rightBlock predicate:@"-35"];
 
-    NSMutableArray* buttonViews = [NSMutableArray array];
+    NSMutableArray *buttonViews = [NSMutableArray array];
     for (NSUInteger i = 0; i < 5; i++) {
         UIView *button = [[UIView alloc] init];
         button.backgroundColor = [UIColor whiteColor];
