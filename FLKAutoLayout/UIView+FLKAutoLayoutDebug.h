@@ -1,16 +1,15 @@
 //
-// Created by Florian on 20.07.13.
-//
-// To change the template use AppCode | Preferences | File Templates.
+// Created by Florian Kugler
 //
 
-
-#import <Foundation/Foundation.h>
-
+@import Foundation;
 
 @interface UIView (FLKAutoLayoutDebug)
 
+/// Triggers AutoLayout to try excercise any ambiguity in the layout
 - (void)flk_exerciseAmbiguityInLayout:(BOOL)recursive;
+
+/// Prints the layout tree of the view 
 - (NSString *)flk_autolayoutTrace;
 
 @end

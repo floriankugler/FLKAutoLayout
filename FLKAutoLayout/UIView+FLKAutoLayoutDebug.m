@@ -1,9 +1,6 @@
 //
-// Created by Florian on 20.07.13.
+// Created by Florian Kugler
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
-
 
 #import "UIView+FLKAutoLayoutDebug.h"
 
@@ -35,9 +32,14 @@ static const CGFloat ExerciseAmbiguityInterval = .5;
 - (NSString *)flk_autolayoutTrace
 {
 #ifdef DEBUG
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+
     if ([self respondsToSelector:@selector(_autolayoutTrace)]) {
         return [self performSelector:@selector(_autolayoutTrace)];
     }
+
+#pragma clang diagnostic pop
 #endif
     return nil;
 }

@@ -12,13 +12,13 @@
     NSMutableArray* predicates;
 }
 
-+ predicateListFromString:(NSString*)string {
++ predicateListFromString:(NSString *)string {
     FLKAutoLayoutPredicateList* predicateList = [[FLKAutoLayoutPredicateList alloc] init];
-    NSArray* predicateStrings = [string componentsSeparatedByString:@","];
+    NSArray *predicateStrings = [string componentsSeparatedByString:@","];
     if (!predicateStrings.count) {
         predicateStrings = @[@"0"];
     }
-    for (NSString* predicateString in predicateStrings) {
+    for (NSString * predicateString in predicateStrings) {
         [predicateList addPredicateFromString:predicateString];
     }
     NSAssert(predicateList->predicates.count > 0, @"Invalid layout predicate: %@", string);
@@ -34,7 +34,7 @@
     return self;
 }
 
-- (NSArray*)iteratePredicatesUsingBlock:(predicateBlock)block {
+- (NSArray *)iteratePredicatesUsingBlock:(predicateBlock)block {
     NSMutableArray* constraints = [NSMutableArray array];
     for (NSValue* predicateValue in predicates) {
         FLKAutoLayoutPredicate predicate;
@@ -47,7 +47,7 @@
     return constraints;
 }
 
-- (void)addPredicateFromString:(NSString*)string {
+- (void)addPredicateFromString:(NSString *)string {
     NSRegularExpression* predicateRegEx = [self predicateExpression];
     NSTextCheckingResult* match = [predicateRegEx firstMatchInString:string options:0 range:NSMakeRange(0, string.length)];
     NSAssert(match, @"Invalid layout predicate: %@", string);
@@ -72,7 +72,7 @@
     [predicates addObject:[NSValue valueWithBytes:&predicate objCType:@encode(FLKAutoLayoutPredicate)]];
 }
 
-- (NSLayoutRelation)relationFromString:(NSString*)relationString {
+- (NSLayoutRelation)relationFromString:(NSString *)relationString {
     if ([relationString isEqualToString:@"<="]) {
         return NSLayoutRelationLessThanOrEqual;
     } else if ([relationString isEqualToString:@">="]) {

@@ -28,9 +28,9 @@ FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGF
 - (NSLayoutConstraint*)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(id)viewOrLayoutGuide fromAttribute:(NSLayoutAttribute)fromAttribute toAttribute:(NSLayoutAttribute)toAttribute {
     if (predicate.priority > UILayoutPriorityRequired) return nil;
 
-    UIView* view;
+    UIView *view;
     id toItem;
-    UIView* commonSuperview;
+    UIView *commonSuperview;
     if ([viewOrLayoutGuide isKindOfClass:[FLKAutoLayoutGuide class]]) {
         view = [viewOrLayoutGuide containerView];
         toItem = [viewOrLayoutGuide layoutGuide];
@@ -58,8 +58,8 @@ FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGF
     return constraint;
 }
 
-- (UIView*)commonSuperviewWithView:(UIView*)view {
-    if (!view) {
+- (UIView *)commonSuperviewWithView:(UIView *)view {
+    if (!view || self == view) {
         return self;
     } else if (self.superview == view) {
         return view;
@@ -68,20 +68,20 @@ FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGF
     } else if (self.superview == view.superview) {
         return self.superview;
     } else {
-        UIView* commonSuperview = [self traverseViewTreeForCommonSuperViewWithView:view];
+        UIView *commonSuperview = [self traverseViewTreeForCommonSuperViewWithView:view];
         NSAssert(commonSuperview, @"Cannot find common superview of %@ and %@. Did you forget to call addSubview: before adding constraints?", self, view);
         return commonSuperview;
     }
 }
 
-- (UIView*)traverseViewTreeForCommonSuperViewWithView:(UIView*)view {
+- (UIView *)traverseViewTreeForCommonSuperViewWithView:(UIView *)view {
     NSMutableOrderedSet* selfSuperviews = [NSMutableOrderedSet orderedSet];
-    UIView* selfSuperview = self;
+    UIView *selfSuperview = self;
     while (selfSuperview) {
         [selfSuperviews addObject:selfSuperview];
         selfSuperview = selfSuperview.superview;
     }
-    UIView* superview = view;
+    UIView *superview = view;
     while (superview) {
         if ([selfSuperviews containsObject:superview]) {
             return superview;
