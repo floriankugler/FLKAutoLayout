@@ -1,13 +1,9 @@
 //
-// Created by Florian on 22.07.13.
+// Created by Florian Kugler
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
-
 
 #import "NSLayoutConstraint+FLKAutoLayoutDebug.h"
 #import "NSObject+FLKAutoLayoutDebug.h"
-
 
 @interface NSLayoutConstraint ()
 

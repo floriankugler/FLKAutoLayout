@@ -1,24 +1,20 @@
 //
-// Created by florian on 25.03.13.
+// Created by Florian Kugler
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
-
 
 #import "FLKAutoLayoutPredicateList.h"
-
 
 @implementation FLKAutoLayoutPredicateList {
     NSMutableArray *predicates;
 }
 
 + predicateListFromString:(NSString *)string {
-    FLKAutoLayoutPredicateList* predicateList = [[FLKAutoLayoutPredicateList alloc] init];
+    FLKAutoLayoutPredicateList *predicateList = [[FLKAutoLayoutPredicateList alloc] init];
     NSArray *predicateStrings = [string componentsSeparatedByString:@","];
     if (!predicateStrings.count) {
         predicateStrings = @[@"0"];
     }
-    for (NSString * predicateString in predicateStrings) {
+    for (NSString *predicateString in predicateStrings) {
         [predicateList addPredicateFromString:predicateString];
     }
     NSAssert(predicateList->predicates.count > 0, @"Invalid layout predicate: %@", string);
@@ -36,10 +32,10 @@
 
 - (NSArray *)iteratePredicatesUsingBlock:(predicateBlock)block {
     NSMutableArray *constraints = [NSMutableArray array];
-    for (NSValue* predicateValue in predicates) {
+    for (NSValue *predicateValue in predicates) {
         FLKAutoLayoutPredicate predicate;
         [predicateValue getValue:&predicate];
-        NSLayoutConstraint* constraint = block(predicate);
+        NSLayoutConstraint *constraint = block(predicate);
         if (constraint) {
             [constraints addObject:constraint];
         }
@@ -48,8 +44,8 @@
 }
 
 - (void)addPredicateFromString:(NSString *)string {
-    NSRegularExpression* predicateRegEx = [self predicateExpression];
-    NSTextCheckingResult* match = [predicateRegEx firstMatchInString:string options:0 range:NSMakeRange(0, string.length)];
+    NSRegularExpression *predicateRegEx = [self predicateExpression];
+    NSTextCheckingResult *match = [predicateRegEx firstMatchInString:string options:0 range:NSMakeRange(0, string.length)];
     NSAssert(match, @"Invalid layout predicate: %@", string);
     NSRange relationRange = [match rangeAtIndex:1];
     NSRange multiplierRange = [match rangeAtIndex:2];
@@ -88,7 +84,7 @@
 }
 
 - (NSRegularExpression*)predicateExpression {
-    static NSRegularExpression* predicateRegEx;
+    static NSRegularExpression *predicateRegEx;
     if (!predicateRegEx) {
         predicateRegEx = [NSRegularExpression regularExpressionWithPattern:@"^\\s*(==|>=|<=)?\\s*(?:\\*([+\\-]?[\\d\\.]+))?\\s*([+\\-]?[\\d\\.]+)?\\s*(?:@(\\d+))?\\s*$"
                                                                    options:NSRegularExpressionCaseInsensitive

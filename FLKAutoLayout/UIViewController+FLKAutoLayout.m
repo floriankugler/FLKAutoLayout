@@ -1,3 +1,7 @@
+//
+// Created by Eloy Durán
+//
+
 #import "UIViewController+FLKAutoLayout.h"
 #import "NSObject+FLKAutoLayoutDebug.h"
 
@@ -21,7 +25,7 @@
 @implementation UIViewController (FLKAutoLayout)
 
 static FLKAutoLayoutGuide *
-FLKAssociatedAutoLayoutGuide(UIViewController *vc, SEL type, const char * const key)
+FLKAssociatedAutoLayoutGuide(UIViewController *vc, SEL type, const char *const key)
 {
     FLKAutoLayoutGuide *guide = objc_getAssociatedObject(vc, key);
     if (guide == nil) {

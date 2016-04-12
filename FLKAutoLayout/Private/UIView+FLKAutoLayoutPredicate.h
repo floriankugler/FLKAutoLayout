@@ -1,12 +1,8 @@
 //
-// Created by florian on 26.03.13.
-//
-// To change the template use AppCode | Preferences | File Templates.
+// Created by Florian Kugler
 //
 
-
-#import <Foundation/Foundation.h>
-
+@import Foundation;
 
 typedef struct {
     NSLayoutRelation relation;
@@ -19,7 +15,7 @@ FOUNDATION_EXTERN FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRela
 
 @interface UIView (FLKAutoLayoutPredicate)
 
-- (NSLayoutConstraint*)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(id)viewOrLayoutGuide attribute:(NSLayoutAttribute)attribute;
-- (NSLayoutConstraint*)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(id)viewOrLayoutGuide fromAttribute:(NSLayoutAttribute)fromAttribute toAttribute:(NSLayoutAttribute)toAttribute;
+- (NSLayoutConstraint *)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(id)viewOrLayoutGuide attribute:(NSLayoutAttribute)attribute;
+- (NSLayoutConstraint *)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(id)viewOrLayoutGuide fromAttribute:(NSLayoutAttribute)fromAttribute toAttribute:(NSLayoutAttribute)toAttribute;
 
 @end

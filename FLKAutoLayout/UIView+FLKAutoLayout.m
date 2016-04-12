@@ -5,7 +5,7 @@
 #import "UIView+FLKAutoLayout.h"
 #import "FLKAutoLayoutPredicateList.h"
 
-NSString * const FLKNoConstraint = @"0@1001"; // maximum valid priority is 1000, constraints with a priority > 1000 will be ignored by FLKAutoLayout
+NSString *const FLKNoConstraint = @"0@1001"; // maximum valid priority is 1000, constraints with a priority > 1000 will be ignored by FLKAutoLayout
 
 typedef NSArray *(^viewChainingBlock)(UIView *view1, UIView *view2);
 
@@ -37,35 +37,35 @@ typedef NSArray *(^viewChainingBlock)(UIView *view1, UIView *view2);
 
 - (NSArray <NSLayoutConstraint *> *)alignTop:(NSString *)top bottom:(NSString *)bottom toView:(id)view
 {
-	NSLayoutConstraint* topConstraints = [self alignTopEdgeWithView:view predicate:top];
-    NSLayoutConstraint* bottomConstraints = [self alignBottomEdgeWithView:view predicate:bottom];
+	NSLayoutConstraint *topConstraints = [self alignTopEdgeWithView:view predicate:top];
+    NSLayoutConstraint *bottomConstraints = [self alignBottomEdgeWithView:view predicate:bottom];
     return @[topConstraints, bottomConstraints];
 }
 - (NSArray <NSLayoutConstraint *> *)alignLeading:(NSString *)leading trailing:(NSString *)trailing toView:(id)view
 {
-	NSLayoutConstraint* leadingConstraints = [self alignLeadingEdgeWithView:view predicate:leading];
-    NSLayoutConstraint* trailingConstraints = [self alignTrailingEdgeWithView:view predicate:trailing];
+	NSLayoutConstraint *leadingConstraints = [self alignLeadingEdgeWithView:view predicate:leading];
+    NSLayoutConstraint *trailingConstraints = [self alignTrailingEdgeWithView:view predicate:trailing];
     return @[leadingConstraints, trailingConstraints];
 }
 
 - (NSArray <NSLayoutConstraint *> *)alignTop:(NSString *)top leading:(NSString *)leading bottom:(NSString *)bottom trailing:(NSString *)trailing toView:(id)view
 {
-    NSArray <NSLayoutConstraint *> * topLeadingConstraints = [self alignTop:top leading:leading toView:view];
-    NSArray <NSLayoutConstraint *> * bottomTrailingConstraints = [self alignBottom:bottom trailing:trailing toView:view];
+    NSArray <NSLayoutConstraint *> *topLeadingConstraints = [self alignTop:top leading:leading toView:view];
+    NSArray <NSLayoutConstraint *> *bottomTrailingConstraints = [self alignBottom:bottom trailing:trailing toView:view];
     return [topLeadingConstraints arrayByAddingObjectsFromArray: bottomTrailingConstraints];
 }
 
 - (NSArray <NSLayoutConstraint *> *)alignTop:(NSString *)top leading:(NSString *)leading toView:(id)view
 {
-    NSLayoutConstraint* topConstraints = [self alignTopEdgeWithView:view predicate:top];
-    NSLayoutConstraint* leadingConstraints = [self alignLeadingEdgeWithView:view predicate:leading];
+    NSLayoutConstraint *topConstraints = [self alignTopEdgeWithView:view predicate:top];
+    NSLayoutConstraint *leadingConstraints = [self alignLeadingEdgeWithView:view predicate:leading];
     return @[topConstraints, leadingConstraints];
 }
 
 - (NSArray <NSLayoutConstraint *> *)alignBottom:(NSString *)bottom trailing:(NSString *)trailing toView:(id)view
 {
-    NSLayoutConstraint* bottomConstraints = [self alignBottomEdgeWithView:view predicate:bottom];
-    NSLayoutConstraint* trailingConstraints = [self alignTrailingEdgeWithView:view predicate:trailing];
+    NSLayoutConstraint *bottomConstraints = [self alignBottomEdgeWithView:view predicate:bottom];
+    NSLayoutConstraint *trailingConstraints = [self alignTrailingEdgeWithView:view predicate:trailing];
     return @[bottomConstraints, trailingConstraints];
 }
 
@@ -77,36 +77,36 @@ typedef NSArray *(^viewChainingBlock)(UIView *view1, UIView *view2);
     return [self alignAttribute:NSLayoutAttributeLeading toView:view predicate:predicate];
 }
 
-- (NSLayoutConstraint*)alignTrailingEdgeWithView:(id)view predicate:(NSString *)predicate
+- (NSLayoutConstraint *)alignTrailingEdgeWithView:(id)view predicate:(NSString *)predicate
 {
     return [self alignAttribute:NSLayoutAttributeTrailing toView:view predicate:predicate];
 }
 
-- (NSLayoutConstraint*)alignTopEdgeWithView:(id)view predicate:(NSString *)predicate
+- (NSLayoutConstraint *)alignTopEdgeWithView:(id)view predicate:(NSString *)predicate
 {
     return [self alignAttribute:NSLayoutAttributeTop toView:view predicate:predicate];
 }
 
-- (NSLayoutConstraint*)alignBottomEdgeWithView:(id)view predicate:(NSString *)predicate {
+- (NSLayoutConstraint *)alignBottomEdgeWithView:(id)view predicate:(NSString *)predicate {
     return [self alignAttribute:NSLayoutAttributeBottom toView:view predicate:predicate];
 }
 
-- (NSLayoutConstraint*)alignBaselineWithView:(id)view predicate:(NSString *)predicate {
+- (NSLayoutConstraint *)alignBaselineWithView:(id)view predicate:(NSString *)predicate {
     return [self alignAttribute:NSLayoutAttributeBaseline toView:view predicate:predicate];
 }
 
-- (NSLayoutConstraint*)alignCenterXWithView:(id)view predicate:(NSString *)predicate {
+- (NSLayoutConstraint *)alignCenterXWithView:(id)view predicate:(NSString *)predicate {
     return [self alignAttribute:NSLayoutAttributeCenterX toView:view predicate:predicate];
 }
 
-- (NSLayoutConstraint*)alignCenterYWithView:(id)view predicate:(NSString *)predicate {
+- (NSLayoutConstraint *)alignCenterYWithView:(id)view predicate:(NSString *)predicate {
     return [self alignAttribute:NSLayoutAttributeCenterY toView:view predicate:predicate];
 }
 
 - (NSArray <NSLayoutConstraint *> *)alignCenterWithView:(id)view
 {
-    NSLayoutConstraint* centerXConstraints = [self alignCenterXWithView:view predicate:@"0"];
-    NSLayoutConstraint* centerYConstraints = [self alignCenterYWithView:view predicate:@"0"];
+    NSLayoutConstraint *centerXConstraints = [self alignCenterXWithView:view predicate:@"0"];
+    NSLayoutConstraint *centerYConstraints = [self alignCenterYWithView:view predicate:@"0"];
     return @[centerXConstraints, centerYConstraints];
 }
 
@@ -115,32 +115,32 @@ typedef NSArray *(^viewChainingBlock)(UIView *view1, UIView *view2);
 
 - (NSArray <NSLayoutConstraint *> *)constrainWidth:(NSString *)widthPredicate height:(NSString *)heightPredicate
 {
-    NSLayoutConstraint* widthConstraints = [self constrainWidth:widthPredicate];
-    NSLayoutConstraint* heightConstraints = [self constrainHeight:heightPredicate];
+    NSLayoutConstraint *widthConstraints = [self constrainWidth:widthPredicate];
+    NSLayoutConstraint *heightConstraints = [self constrainHeight:heightPredicate];
     return @[widthConstraints, heightConstraints];
 }
 
-- (NSLayoutConstraint*)constrainWidth:(NSString *)widthPredicate
+- (NSLayoutConstraint *)constrainWidth:(NSString *)widthPredicate
 {
     return [self alignAttribute:NSLayoutAttributeWidth toView:nil predicate:widthPredicate];
 }
 
-- (NSLayoutConstraint*)constrainHeight:(NSString *)heightPredicate
+- (NSLayoutConstraint *)constrainHeight:(NSString *)heightPredicate
 {
     return [self alignAttribute:NSLayoutAttributeHeight toView:nil predicate:heightPredicate];
 }
 
-- (NSLayoutConstraint*)constrainWidthToView:(id)view predicate:(NSString *)predicate
+- (NSLayoutConstraint *)constrainWidthToView:(id)view predicate:(NSString *)predicate
 {
     return [self alignAttribute:NSLayoutAttributeWidth toView:view predicate:predicate];
 }
 
-- (NSLayoutConstraint*)constrainHeightToView:(id)view predicate:(NSString *)predicate
+- (NSLayoutConstraint *)constrainHeightToView:(id)view predicate:(NSString *)predicate
 {
     return [self alignAttribute:NSLayoutAttributeHeight toView:view predicate:predicate];
 }
 
-- (NSLayoutConstraint*)constrainAspectRatio:(NSString *)predicate
+- (NSLayoutConstraint *)constrainAspectRatio:(NSString *)predicate
 {
     return [self alignAttribute:NSLayoutAttributeWidth toAttribute:NSLayoutAttributeHeight ofView:self predicate:predicate];
 }
@@ -176,10 +176,10 @@ typedef NSArray *(^viewChainingBlock)(UIView *view1, UIView *view2);
 + (NSArray <NSLayoutConstraint *> *)alignAttribute:(NSLayoutAttribute)attribute ofViews:(NSArray *)views toAttribute:(NSLayoutAttribute)toAttribute ofViews:(NSArray *)toViews predicate:(NSString *)predicate
 {
     NSAssert(views.count == toViews.count || !toViews, @"Aligning attributes of multiple views to multiple views requires both view arrays to be the same length");
-    FLKAutoLayoutPredicateList* predicateList = [FLKAutoLayoutPredicateList predicateListFromString:predicate];
+    FLKAutoLayoutPredicateList *predicateList = [FLKAutoLayoutPredicateList predicateListFromString:predicate];
     NSMutableArray *constraints = [NSMutableArray array];
     for (NSUInteger i = 0; i < views.count; i++) {
-        NSArray *pairConstraints = [predicateList iteratePredicatesUsingBlock:^NSLayoutConstraint*(FLKAutoLayoutPredicate predicateElement) {
+        NSArray *pairConstraints = [predicateList iteratePredicatesUsingBlock:^NSLayoutConstraint *(FLKAutoLayoutPredicate predicateElement) {
             return [views[i] applyPredicate:predicateElement toView:toViews[i] fromAttribute:attribute toAttribute:toAttribute];
         }];
         [constraints addObjectsFromArray:pairConstraints];
@@ -284,7 +284,7 @@ typedef NSArray *(^viewChainingBlock)(UIView *view1, UIView *view2);
     NSMutableArray *constraints = [NSMutableArray array];
     for (UIView *view in views) {
         FLKAutoLayoutPredicate predicate = FLKAutoLayoutPredicateMake(NSLayoutRelationEqual, multiplier, 0, 0);
-        NSLayoutConstraint* constraint = [view applyPredicate:predicate toView:inView attribute:attribute];
+        NSLayoutConstraint *constraint = [view applyPredicate:predicate toView:inView attribute:attribute];
         if (constraint) {
             [constraints addObject:constraint];
         }

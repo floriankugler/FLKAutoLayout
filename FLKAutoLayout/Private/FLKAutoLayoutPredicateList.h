@@ -1,14 +1,11 @@
 //
-// Created by florian on 25.03.13.
-//
-// To change the template use AppCode | Preferences | File Templates.
+// Created by Florian Kugler
 //
 
-
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "UIView+FLKAutoLayoutPredicate.h"
 
-typedef NSLayoutConstraint* (^predicateBlock)(FLKAutoLayoutPredicate predicate);
+typedef NSLayoutConstraint *(^predicateBlock)(FLKAutoLayoutPredicate predicate);
 
 @interface FLKAutoLayoutPredicateList : NSObject
 

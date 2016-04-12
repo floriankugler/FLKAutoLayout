@@ -21,11 +21,11 @@ FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGF
 @implementation UIView (FLKAutoLayoutPredicate)
 
 
-- (NSLayoutConstraint*)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(id)viewOrLayoutGuide attribute:(NSLayoutAttribute)attribute {
+- (NSLayoutConstraint *)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(id)viewOrLayoutGuide attribute:(NSLayoutAttribute)attribute {
     return [self applyPredicate:predicate toView:viewOrLayoutGuide fromAttribute:attribute toAttribute:attribute];
 }
 
-- (NSLayoutConstraint*)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(id)viewOrLayoutGuide fromAttribute:(NSLayoutAttribute)fromAttribute toAttribute:(NSLayoutAttribute)toAttribute {
+- (NSLayoutConstraint *)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(id)viewOrLayoutGuide fromAttribute:(NSLayoutAttribute)fromAttribute toAttribute:(NSLayoutAttribute)toAttribute {
     if (predicate.priority > UILayoutPriorityRequired) return nil;
 
     UIView *view;
@@ -75,7 +75,7 @@ FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGF
 }
 
 - (UIView *)traverseViewTreeForCommonSuperViewWithView:(UIView *)view {
-    NSMutableOrderedSet* selfSuperviews = [NSMutableOrderedSet orderedSet];
+    NSMutableOrderedSet *selfSuperviews = [NSMutableOrderedSet orderedSet];
     UIView *selfSuperview = self;
     while (selfSuperview) {
         [selfSuperviews addObject:selfSuperview];

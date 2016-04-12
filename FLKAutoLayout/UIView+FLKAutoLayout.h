@@ -1,7 +1,11 @@
+//
+// Created by Florian Kugler
+//
+
 @import UIKit;
 NS_ASSUME_NONNULL_BEGIN
 
-FOUNDATION_EXTERN NSString * const FLKNoConstraint;
+FOUNDATION_EXTERN NSString *const FLKNoConstraint;
 
 /// A collection of categories for UIViews, note the
 /// `view` API can either be a `UIView` subclass or a `FLKAutoLayoutGuide`.
@@ -69,34 +73,34 @@ FOUNDATION_EXTERN NSString * const FLKNoConstraint;
 - (NSArray <NSLayoutConstraint *> *)constrainWidth:(NSString *)widthPredicate height:(NSString *)heightPredicate;
 
 /// Constrain the width of self
-- (NSLayoutConstraint*)constrainWidth:(NSString *)widthPredicate;
+- (NSLayoutConstraint *)constrainWidth:(NSString *)widthPredicate;
 
 /// Constrain the height of self
-- (NSLayoutConstraint*)constrainHeight:(NSString *)heightPredicate;
+- (NSLayoutConstraint *)constrainHeight:(NSString *)heightPredicate;
 
 /// Constrain the width of self to another view
-- (NSLayoutConstraint*)constrainWidthToView:(id)view predicate:(NSString *)predicate;
+- (NSLayoutConstraint *)constrainWidthToView:(id)view predicate:(NSString *)predicate;
 
 /// Constrain the height of self to another view
-- (NSLayoutConstraint*)constrainHeightToView:(id)view predicate:(NSString *)predicate;
+- (NSLayoutConstraint *)constrainHeightToView:(id)view predicate:(NSString *)predicate;
 
 /// Constrain the aspect ratio of seff
-- (NSLayoutConstraint*)constrainAspectRatio:(NSString *)predicate;
+- (NSLayoutConstraint *)constrainAspectRatio:(NSString *)predicate;
 
 
 #pragma mark Spacing out two views
 
 /// Attach self to flow horizontally _after_ `view`, self.trailing to view.leading
-- (NSLayoutConstraint*)constrainLeadingSpaceToView:(id)view predicate:(NSString *)predicate;
+- (NSLayoutConstraint *)constrainLeadingSpaceToView:(id)view predicate:(NSString *)predicate;
 
 /// Attach self to flow horizontally _before_ `view`, self.leading to view.trailing
-- (NSLayoutConstraint*)constrainTrailingSpaceToView:(id)view predicate:(NSString *)predicate;
+- (NSLayoutConstraint *)constrainTrailingSpaceToView:(id)view predicate:(NSString *)predicate;
 
 /// Attach self to flow vertically _after_ `view`, self.top to view.bottom
-- (NSLayoutConstraint*)constrainTopSpaceToView:(id)view predicate:(NSString *)predicate;
+- (NSLayoutConstraint *)constrainTopSpaceToView:(id)view predicate:(NSString *)predicate;
 
 /// Attach self to flow vertically _before_ `view`, self.bottom to view.top
-- (NSLayoutConstraint*)constrainBottomSpaceToView:(id)view predicate:(NSString *)predicate;
+- (NSLayoutConstraint *)constrainBottomSpaceToView:(id)view predicate:(NSString *)predicate;
 
 
 #pragma mark Generic constraint methods for multiple views
