@@ -52,6 +52,13 @@ FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGF
 }
 
 - (UIView *)commonSuperviewWithView:(UIView *)view {
+    #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 90000
+    if ([view isKindOfClass:[UILayoutGuide class]]) {
+        UILayoutGuide *guide = (UILayoutGuide *)view;
+        return guide.owningView;
+    }
+    #endif
+
     if (!view || self == view) {
         return self;
     } else if (self.superview == view) {
