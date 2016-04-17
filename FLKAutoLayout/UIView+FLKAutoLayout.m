@@ -276,7 +276,7 @@ typedef NSArray *(^viewChainingBlock)(UIView *view1, UIView *view2);
 {
     NSAssert(views.count > 1, @"Distribute views requires at least two views");
     CGFloat interval = 2.0f / (views.count - 1);
-    CGFloat multiplier = 0;
+    CGFloat multiplier = 0.01;
     NSMutableArray *constraints = [NSMutableArray array];
     for (UIView *view in views) {
         FLKAutoLayoutPredicate predicate = FLKAutoLayoutPredicateMake(NSLayoutRelationEqual, multiplier, 0, 0);

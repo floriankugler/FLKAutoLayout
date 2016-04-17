@@ -60,7 +60,7 @@
     
     [boxViews[0] constrainWidth:@"100" height:@"100"];
     [UIView equalWidthForViews:boxViews];
-    id array = [UIView equalHeightForViews:boxViews];
+    [UIView equalHeightForViews:boxViews];
     [boxViews[0] alignCenterXWithView:leftBlock predicate:@"0"];
     [UIView alignLeadingAndTrailingEdgesOfViews:boxViews];
     [UIView distributeCenterYOfViews:boxViews inView:boxContainer];
@@ -114,7 +114,6 @@
     [UIView alignBottomEdgesOfViews:buttonViews];
     [UIView distributeCenterXOfViews:buttonViews inView:buttonContainer];
 
-
     UIView *test1 = [[UIView alloc] init];
     [backgroundView addSubview:test1];
     [test1 constrainWidth:@"400" height:@"200"];
@@ -154,7 +153,7 @@
 
     [test4 alignTop:@"0" bottom:@"0" toView:test3];
     [test4 constrainWidth:@"2"];
-    [test4 alignAttribute:NSLayoutAttributeLeft toAttribute:NSLayoutAttributeRight ofView:test2 predicate:@"*0"];
+    [test4 alignAttribute:NSLayoutAttributeLeft toAttribute:NSLayoutAttributeRight ofView:test2 predicate:@"0"];
 }
 
 
