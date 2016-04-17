@@ -1,9 +1,9 @@
 FLKAutoLayout
 =============
 
-FLKAutoLayout is a category on UIView which makes it easy to setup layout constraints in code.
+FLKAutoLayout is a collection of categories on UIView which makes it easy to setup layout constraints in code.
 
-FLKAutoLayout creates simple constraints with a readable syntax and provides many convenience methods to setup more complex constraints between multiple views at once. It automatically adds the constraints to the nearest common superview of the views involved and sets the translatesAutoresizingMaskIntoConstraints property on those views to NO.
+FLKAutoLayout creates simple constraints with a readable syntax and provides many convenience methods to setup more complex constraints between multiple views at once. It automatically adds the constraints to the nearest common superview of the views involved and sets the `translatesAutoresizingMaskIntoConstraints` property on those views to `NO`.
 
 FLKAutoLayout provides methods on UIView *instances* for simple layout constraints like width and height or constraining an edge of one view to another. Furthermore it provides methods on the UIView *class* for more complex layout constraints where more than two views are involved.
 
@@ -23,7 +23,7 @@ Let's assume we have a bunch of labels and an equal amount of textFields and we 
 // space the labels out vertically with 10 points in between
 [UIView spaceOutViewsVertically:labels predicate:@"10"];
 
-// now let's take care of the text fields. 
+// now let's take care of the text fields.
 // the first one has a fixed space of 20 to its label
 [textFields[0] constrainLeadingSpaceToView:labels[0] predicate:@"20"];
 // constrain the right edge to its superview with 20 points padding
@@ -31,7 +31,7 @@ Let's assume we have a bunch of labels and an equal amount of textFields and we 
 // constrain all other text fields to the same width
 [UIView alignLeadingAndTrailingEdgesOfViews:textFields];
 // and finally let's align the baseline of each label with the baseline of each text field
-[UIView alignAttribute:NSLayoutAttributeBaseline ofViews:labels toViews:textFields predicate:nil];
+[UIView alignAttribute:NSLayoutAttributeBaseline ofViews:labels toViews:textFields predicate:@"0"];
 ```
 
 
@@ -43,7 +43,7 @@ Aligning edges of one view to another:
 
 ``` objective-c
  // constrain the leading edge of the view to the leading edge of another
-[view alignLeadingEdgeWithView:otherView predicate:nil];
+[view alignLeadingEdgeWithView:otherView predicate:@"0"];
 
  // same as before but use a 20 point offset
 [view alignLeadingEdgeWithView:otherView predicate:@"20"];
@@ -52,12 +52,12 @@ Aligning edges of one view to another:
 [view alignLeadingEdgeWithView:otherView predicate:@"20@750"];
 
 // aligning some other edge types
-[view alignTopEdgeWithView:otherView predicate:nil];
-[view alignBottomEdgeWithView:otherView predicate:nil];
-[view alignTrailingEdgeWithView:otherView predicate:nil];
-[view alignBaselineWithView:otherView predicate:nil];
-[view alignCenterXWithView:otherView predicate:nil];
-[view alignCenterYWithView:otherView predicate:nil];
+[view alignTopEdgeWithView:otherView predicate:@"0"];
+[view alignBottomEdgeWithView:otherView predicate:@"0"];
+[view alignTrailingEdgeWithView:otherView predicate:@"0"];
+[view alignBaselineWithView:otherView predicate:@"0"];
+[view alignCenterXWithView:otherView predicate:@"0"];
+[view alignCenterYWithView:otherView predicate:@"0"];
 
 // centering two views
 [view alignCenterWithView:otherView];
@@ -106,6 +106,12 @@ you can use a generic helper method:
 [view alignAttribute:NSLayoutAttributeCenterX to Attribute:NSLayoutAttributeTrailing ofView:otherView predicate:@"20"];
 ```
 
+Which reads [succinctly](https://github.com/artsy/eigen/blob/72f5d7aa1a8b069f4147e56a6dd190e0c66664a5/Artsy/View_Controllers/Live_Auctions/Views/LiveAuctionToolbarView.swift#L132-L139) in Swift
+
+``` swift
+view.alignAttribute(.CenterX, toAttribute: .Trailing, ofView: otherView, predicate: "0")
+```
+
 ## FLKAutoLayout class methods
 
 For laying out more than two views at once FLKAutoLayout provides extends UIView with some class methods.
@@ -135,7 +141,7 @@ Spacing out multiple views:
 // space out views horizontally with 20 points in between
 [UIView spaceOutViewsHorizontally:views predicate:@"20"];
 // space out views vertically with no space in between
-[UIView spaceOutViewsVertically:views predicate:nil];
+[UIView spaceOutViewsVertically:views predicate:@"0"];
 
 // Distribute views according to their horizontal center
 [UIView distributeCenterXOfViews:views inView:containerView];
@@ -149,9 +155,9 @@ Please note that distributing views at their centers will line up the center of 
 ### The predicate argument
 
 Many of the methods take a predicate string which resembles the syntax Apple uses in their visual format language,
-extended by the possibiliy to also specify a multiplier. A nil predicate is the same as @"0".
+extended by the possibiliy to also specify a multiplier.
 
-[ == | >= | <= ] [ *multipler ] [ constant ] [ @priority ], ...
+`[ == | >= | <= ] [ *multipler ] [ constant ] [ @priority ], ...`
 
 For example:
 
@@ -168,6 +174,10 @@ For example:
 // greater than or equal to 1/2 of the otherView width, smaller than or equal to 600 points with a priority of 100
 [view constrainWidthToView:otherView predicate:@">=*.5,<=600@100"];
 ```
+
+### FLKAutoLayoutGuide class methods
+
+
 
 
 ## Creator
