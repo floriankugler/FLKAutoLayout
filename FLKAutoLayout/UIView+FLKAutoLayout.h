@@ -12,7 +12,6 @@ FOUNDATION_EXTERN NSString *const FLKNoConstraint;
 
 @interface UIView (FLKAutoLayout)
 
-
 #pragma mark Generic constraint methods for two views
 
 /// Align an attribute of one view to another.
@@ -84,7 +83,7 @@ FOUNDATION_EXTERN NSString *const FLKNoConstraint;
 /// Constrain the height of self to another view
 - (NSLayoutConstraint *)constrainHeightToView:(id)view predicate:(NSString *)predicate;
 
-/// Constrain the aspect ratio of seff
+/// Constrain the aspect ratio of self
 - (NSLayoutConstraint *)constrainAspectRatio:(NSString *)predicate;
 
 
@@ -105,7 +104,7 @@ FOUNDATION_EXTERN NSString *const FLKNoConstraint;
 
 #pragma mark Generic constraint methods for multiple views
 
-/// Align multiple views to align the same sattribute
+/// Align multiple views to align the same attribute
 + (NSArray <NSLayoutConstraint *> *)alignAttribute:(NSLayoutAttribute)attribute ofViews:(NSArray <UIView *> *)ofViews toViews:(NSArray <UIView *> *)toViews predicate:(NSString *)predicate;
 
 /// Align multiple views to align the different attributes
