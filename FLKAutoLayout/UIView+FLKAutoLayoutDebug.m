@@ -1,7 +1,3 @@
-//
-// Created by Florian Kugler
-//
-
 #import "UIView+FLKAutoLayoutDebug.h"
 
 static const CGFloat ExerciseAmbiguityInterval = .5;

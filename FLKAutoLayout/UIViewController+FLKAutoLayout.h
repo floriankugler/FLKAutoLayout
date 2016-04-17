@@ -1,7 +1,3 @@
-//
-// Created by Eloy Durán
-//
-
 @import UIKit;
 
 /// A NSLayoutGuide for iOS 7 & 8

@@ -1,7 +1,3 @@
-//
-// Created by Florian Kugler
-//
-
 #import "UIView+FLKAutoLayout.h"
 #import "FLKAutoLayoutPredicateList.h"
 

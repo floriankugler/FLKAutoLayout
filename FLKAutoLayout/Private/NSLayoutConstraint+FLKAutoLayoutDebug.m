@@ -1,7 +1,3 @@
-//
-// Created by Florian Kugler
-//
-
 #import "NSLayoutConstraint+FLKAutoLayoutDebug.h"
 #import "NSObject+FLKAutoLayoutDebug.h"
 

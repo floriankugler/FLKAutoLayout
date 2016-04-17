@@ -1,7 +1,3 @@
-//
-// Created by Eloy Durán
-//
-
 #import "UIViewController+FLKAutoLayout.h"
 #import "NSObject+FLKAutoLayoutDebug.h"
 

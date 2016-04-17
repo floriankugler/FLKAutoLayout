@@ -1,7 +1,3 @@
-//
-// Created by Florian Kugler
-//
-
 @import UIKit;
 NS_ASSUME_NONNULL_BEGIN
 
