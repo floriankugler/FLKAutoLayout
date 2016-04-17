@@ -1,7 +1,3 @@
-//
-// Created by Florian Kugler
-//
-
 #import "NSObject+FLKAutoLayoutDebug.h"
 #import <objc/runtime.h>
 

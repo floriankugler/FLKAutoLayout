@@ -1,10 +1,3 @@
-//
-// Created by florian on 26.03.13.
-//
-// To change the template use AppCode | Preferences | File Templates.
-//
-
-
 #import "UIView+FLKAutoLayoutPredicate.h"
 #import "UIViewController+FLKAutoLayout.h"
 
@@ -59,6 +52,13 @@ FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGF
 }
 
 - (UIView *)commonSuperviewWithView:(UIView *)view {
+    #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 90000
+    if ([view isKindOfClass:[UILayoutGuide class]]) {
+        UILayoutGuide *guide = (UILayoutGuide *)view;
+        return guide.owningView;
+    }
+    #endif
+
     if (!view || self == view) {
         return self;
     } else if (self.superview == view) {
