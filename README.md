@@ -175,9 +175,20 @@ For example:
 [view constrainWidthToView:otherView predicate:@">=*.5,<=600@100"];
 ```
 
-### FLKAutoLayoutGuide class methods
+### UILayoutGuide / FLKAutoLayoutGuide
 
+If you are support OSes below iOS9 you can use the `flk_topLayoutGuide` and `flk_bottomLayoutGuide` to work with layout guides for your UIViewControllers.
 
+```objective-c
+- (void)viewWillLayoutSubviews
+{
+    [self.webView constrainTopSpaceToView:self.flk_topLayoutGuide predicate:@"0"];
+    [self.webView alignLeading:@"0" trailing:@"0" toView:self.view];
+    [self.webView alignBottomEdgeWithView:self.view predicate:@"0"];
+}
+```
+
+For iOS9 and above you can use the UIKit methods.
 
 
 ## Creator
