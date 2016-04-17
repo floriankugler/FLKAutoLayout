@@ -1,16 +1,10 @@
 //
-// Created by Florian on 20.07.13.
+// Created by Florian Kugler
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
-
 
 #import "UIView+FLKAutoLayoutDebug.h"
-#import <objc/runtime.h>
 
 static const CGFloat ExerciseAmbiguityInterval = .5;
-static char *const NameTagKey = "flk_nameTag";
-
 
 @implementation UIView (FLKAutoLayoutDebug)
 
@@ -38,21 +32,16 @@ static char *const NameTagKey = "flk_nameTag";
 - (NSString *)flk_autolayoutTrace
 {
 #ifdef DEBUG
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+
     if ([self respondsToSelector:@selector(_autolayoutTrace)]) {
         return [self performSelector:@selector(_autolayoutTrace)];
     }
+
+#pragma clang diagnostic pop
 #endif
     return nil;
-}
-
-- (void)setFlk_nameTag:(NSString *)nameTag
-{
-    objc_setAssociatedObject(self, NameTagKey, nameTag, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (NSString *)flk_nameTag
-{
-    return objc_getAssociatedObject(self, NameTagKey);
 }
 
 @end
