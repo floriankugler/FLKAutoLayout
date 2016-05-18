@@ -19,7 +19,7 @@ FLKAutoLayoutPredicate FLKAutoLayoutPredicateMake(NSLayoutRelation relation, CGF
 }
 
 - (NSLayoutConstraint *)applyPredicate:(FLKAutoLayoutPredicate)predicate toView:(id)viewOrLayoutGuide fromAttribute:(NSLayoutAttribute)fromAttribute toAttribute:(NSLayoutAttribute)toAttribute {
-    if (predicate.priority > UILayoutPriorityRequired) return nil;
+    NSAssert(predicate.priority < UILayoutPriorityRequired, @"Due to FLKAutoLayout's nullability API, priorities over 1000 ( which would fail and return null ) are not supported.");
 
     UIView *view;
     id toItem;
