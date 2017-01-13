@@ -1,4 +1,4 @@
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 /// A NSLayoutGuide for iOS 7 & 8
 

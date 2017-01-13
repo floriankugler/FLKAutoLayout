@@ -1,4 +1,4 @@
-@import Foundation;
+#import <Foundation/Foundation.h>
 #import "UIView+FLKAutoLayoutPredicate.h"
 
 typedef NSLayoutConstraint *(^predicateBlock)(FLKAutoLayoutPredicate predicate);
