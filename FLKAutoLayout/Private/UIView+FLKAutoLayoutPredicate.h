@@ -1,4 +1,4 @@
-@import Foundation;
+#import <Foundation/Foundation.h>
 
 typedef struct {
     NSLayoutRelation relation;
