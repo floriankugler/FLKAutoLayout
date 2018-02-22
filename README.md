@@ -42,13 +42,13 @@ FLKAutoLayout extends UIView instances with methods to setup simple constraints 
 Aligning edges of one view to another:
 
 ``` objective-c
- // constrain the leading edge of the view to the leading edge of another
+// constrain the leading edge of the view to the leading edge of another
 [view alignLeadingEdgeWithView:otherView predicate:@"0"];
 
- // same as before but use a 20 point offset
+// same as before but use a 20 point offset
 [view alignLeadingEdgeWithView:otherView predicate:@"20"];
 
- // same as before but give this constraint a priority of 750
+// same as before but give this constraint a priority of 750
 [view alignLeadingEdgeWithView:otherView predicate:@"20@750"];
 
 // aligning some other edge types
@@ -66,16 +66,16 @@ Aligning edges of one view to another:
 Constraining view to another:
 ``` objective-c
 // constrain leading edge of the view to the trailing edge of the other
- [view constrainLeadingSpaceToView:otherView predicate:@"0"];
+[view constrainLeadingSpaceToView:otherView predicate:@"0"];
 
- // constrain trailing edge of the view to the leading edge of the other
- [view constrainTrailingSpaceToView:otherView predicate:@"0"];
+// constrain trailing edge of the view to the leading edge of the other
+[view constrainTrailingSpaceToView:otherView predicate:@"0"];
 
- // constrain top edge of the view to the bottom edge of the other
- [view constrainTopSpaceToView:otherView predicate:@"0"];
+// constrain top edge of the view to the bottom edge of the other
+[view constrainTopSpaceToView:otherView predicate:@"0"];
 
- // constrain bottom edge of the view to the top edge of the other
- [view constrainBottomSpaceToView:otherView predicate:@"0"];
+// constrain bottom edge of the view to the top edge of the other
+[view constrainBottomSpaceToView:otherView predicate:@"0"];
 ```
 
 Constraining width & height:
