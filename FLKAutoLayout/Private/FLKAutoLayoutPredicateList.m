@@ -61,6 +61,8 @@
     if (priorityRange.location != NSNotFound) {
         predicate.priority = [[string substringWithRange:priorityRange] integerValue];
     }
+
+    NSAssert(predicate.priority < UILayoutPriorityRequired, @"Due to FLKAutoLayout's nullability API, priorities over 1000 ( which would fail and return null ) are not supported.");
     [predicates addObject:[NSValue valueWithBytes:&predicate objCType:@encode(FLKAutoLayoutPredicate)]];
 }
 

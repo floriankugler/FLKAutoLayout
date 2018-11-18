@@ -1,13 +1,11 @@
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
-FOUNDATION_EXTERN NSString *const FLKNoConstraint;
-
 /// A collection of categories for UIViews, note the
 /// `view` API can either be a `UIView` subclass or a `FLKAutoLayoutGuide`.
 
 @interface UIView (FLKAutoLayout)
-
+ 
 #pragma mark Generic constraint methods for two views
 
 /// Align an attribute of one view to another.

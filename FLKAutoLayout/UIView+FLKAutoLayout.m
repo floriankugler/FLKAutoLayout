@@ -1,8 +1,6 @@
 #import "UIView+FLKAutoLayout.h"
 #import "FLKAutoLayoutPredicateList.h"
 
-NSString *const FLKNoConstraint = @"0@1001"; // maximum valid priority is 1000, constraints with a priority > 1000 will be ignored by FLKAutoLayout
-
 typedef NSArray *(^viewChainingBlock)(UIView *view1, UIView *view2);
 
 
